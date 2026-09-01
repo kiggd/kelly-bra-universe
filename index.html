@@ -1,0 +1,2778 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#140f17">
+<title>凱莉愛內衣宇宙 V5 CINEMATIC｜Kelly Love BRA UNIVERSE</title>
+<meta name="description" content="10 秒測出妳的內衣角色。12 位角色對應凱莉愛真實版型：深杯、高脇、無鋼圈、軟鋼圈、無痕、涼感、寬肩分壓、穩定下圍。收集、召喚、組戰隊、邀好友。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#140f17;
+  --velvet:#221626;
+  --velvet2:#2f2033;
+  --ink:#2a2129;
+  --paper:#fdf7f3;
+  --cream:#f5e9e3;
+  --line:#e3d2cd;
+  --linedark:rgba(230,200,140,.16);
+  --muted:#7b6b73;
+  --mutedd:#b7a3ae;
+  --rose:#d9738e;
+  --rose2:#b3576f;
+  --wine:#5e2a3d;
+  --gold:#e6c88c;
+  --gold2:#b0873f;
+  --mint:#84d6c9;
+  --amethyst:#b294dd;
+  --pearl:#efe3e3;
+  --base:16px;
+  --r:22px;
+  --hud:74px;
+  --tSans:"Noto Sans TC",-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",sans-serif;
+  --tSerif:"Noto Serif TC",Georgia,"PingFang TC",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;font-family:var(--tSans);font-size:var(--base);color:var(--paper);
+  background:var(--void);overflow-x:hidden;line-height:1.65;
+  padding-bottom:calc(var(--hud) + env(safe-area-inset-bottom,0px));
+}
+body.easy{--base:19px}
+body.easy .micro{font-size:.86rem}
+body.easy .btn,body.easy .ans{min-height:60px}
+body.easy .deco{display:none!important}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+body.calm .fx{display:none!important}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.hidden{display:none!important}
+h1,h2,h3,h4{font-family:var(--tSerif);font-weight:900;line-height:1.25;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+
+/* ---------- 星空底 ---------- */
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55}
+.glowbg{position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+   radial-gradient(60% 40% at 15% 0%,rgba(217,115,142,.20),transparent 70%),
+   radial-gradient(50% 40% at 88% 8%,rgba(230,200,140,.14),transparent 70%),
+   radial-gradient(70% 50% at 50% 100%,rgba(94,42,61,.35),transparent 70%);}
+.layer{position:relative;z-index:1}
+
+/* ---------- 頂列 ---------- */
+.topbar{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);
+  background:linear-gradient(180deg,rgba(20,15,23,.94),rgba(20,15,23,.72),transparent);}
+.topbar-in{max-width:1080px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:10px}
+.logo{display:flex;align-items:center;gap:9px;font-family:var(--tSerif);font-weight:900;letter-spacing:.04em;font-size:.98rem}
+.logo i{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(150deg,var(--rose),var(--wine));box-shadow:0 0 0 1px rgba(230,200,140,.35),0 8px 24px rgba(217,115,142,.3)}
+.logo i svg{width:20px;height:20px}
+.spacer{flex:1}
+.chipset{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.chip{border:1px solid var(--linedark);background:rgba(255,255,255,.05);border-radius:999px;
+  padding:7px 11px;font-size:.78rem;font-weight:700;color:var(--pearl);min-height:38px;display:inline-flex;align-items:center;gap:5px}
+.chip.on{background:var(--gold);color:#2a1c07;border-color:var(--gold)}
+.chip:hover{border-color:rgba(230,200,140,.5)}
+
+/* ---------- 按鈕 ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:14px;padding:14px 20px;font-weight:900;min-height:50px;letter-spacing:.02em;
+  border:1px solid var(--linedark);background:rgba(255,255,255,.06);color:var(--paper);transition:transform .15s,filter .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.985)}
+.btn-gold{background:linear-gradient(140deg,#f2dcac,#c69a4f);color:#2a1c07;border:0;box-shadow:0 12px 34px rgba(198,154,79,.28)}
+.btn-rose{background:linear-gradient(140deg,var(--rose),var(--wine));color:#fff;border:0;box-shadow:0 12px 34px rgba(217,115,142,.3)}
+.btn-ghost{background:transparent}
+.btn-sm{padding:9px 14px;min-height:42px;font-size:.85rem;border-radius:11px}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap}
+
+/* ---------- 卡面板 ---------- */
+.panel{border:1px solid var(--linedark);border-radius:26px;padding:24px;
+  background:linear-gradient(165deg,rgba(47,32,51,.72),rgba(26,18,29,.72));
+  box-shadow:0 24px 70px rgba(0,0,0,.35)}
+.panel.light{background:linear-gradient(165deg,#fffaf7,#f7ece6);color:var(--ink);border-color:var(--line)}
+.panel.light .sub,.panel.light .micro{color:var(--muted)}
+.kicker{font-family:var(--tSerif);font-size:.76rem;letter-spacing:.28em;color:var(--gold);font-weight:700}
+.sub{color:var(--mutedd);font-size:.94rem}
+.micro{color:var(--mutedd);font-size:.8rem;line-height:1.6}
+.rule{height:1px;background:linear-gradient(90deg,transparent,var(--linedark),transparent);margin:18px 0}
+
+/* ---------- 開場 ---------- */
+.hero{min-height:88vh;display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center;padding:40px 0 30px}
+.hero h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:-.01em}
+.hero h1 em{font-style:normal;color:var(--gold);text-shadow:0 0 30px rgba(230,200,140,.35)}
+.hero p.lead{margin-top:16px;color:var(--pearl);font-size:1.02rem;max-width:34em;opacity:.9}
+.hero .btnrow{margin-top:26px}
+.heroStage{position:relative;display:grid;place-items:center;min-height:460px}
+.heroCard{width:min(330px,78vw);transform:rotate(-4deg);animation:float 7s ease-in-out infinite}
+.heroCard.b{position:absolute;transform:rotate(9deg) translate(48px,26px) scale(.86);opacity:.55;filter:blur(.4px);animation-delay:-2.4s;z-index:-1}
+.heroCard.c{position:absolute;transform:rotate(-16deg) translate(-52px,18px) scale(.8);opacity:.35;animation-delay:-4.6s;z-index:-2}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.trustrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.trustrow span{border:1px solid var(--linedark);border-radius:999px;padding:7px 12px;font-size:.78rem;color:var(--pearl);background:rgba(255,255,255,.04)}
+
+/* ---------- HUD 底部導覽 ---------- */
+.hud{position:fixed;left:0;right:0;bottom:0;z-index:70;
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));
+  background:linear-gradient(0deg,rgba(16,11,19,.98),rgba(16,11,19,.86) 60%,transparent);
+  backdrop-filter:blur(16px)}
+.hud-in{max-width:600px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:4px;
+  border:1px solid var(--linedark);border-radius:20px;padding:5px;background:rgba(47,32,51,.72)}
+.tab{display:grid;place-items:center;gap:3px;padding:8px 2px;border-radius:15px;color:var(--mutedd);font-size:.68rem;font-weight:800;min-height:56px;position:relative}
+.tab svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tab.on{background:linear-gradient(150deg,rgba(230,200,140,.2),rgba(217,115,142,.16));color:var(--gold)}
+.tab .dot{position:absolute;top:6px;right:calc(50% - 20px);width:8px;height:8px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px var(--rose)}
+body.easy .tab{font-size:.76rem}
+
+/* ---------- view ---------- */
+.view{display:none;padding:22px 0 40px;animation:viewIn .4s ease}
+.view.on{display:block}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.vhead{margin-bottom:18px}
+.vhead h2{font-size:clamp(1.5rem,4.2vw,2.1rem);margin:6px 0 8px}
+
+/* ---------- 測驗 ---------- */
+.quizbar{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.ring{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--gold) 0deg,rgba(255,255,255,.09) 0);flex:none}
+.ring b{width:44px;height:44px;border-radius:50%;background:var(--velvet);display:grid;place-items:center;font-size:.82rem;color:var(--gold)}
+.qtitle{font-family:var(--tSerif);font-size:clamp(1.2rem,3.6vw,1.65rem);font-weight:900;margin:6px 0 4px}
+.answers{display:grid;gap:11px;margin-top:18px}
+.ans{display:flex;align-items:center;gap:14px;text-align:left;width:100%;
+  border:1px solid var(--linedark);border-radius:18px;padding:16px 18px;min-height:72px;
+  background:linear-gradient(140deg,rgba(255,255,255,.06),rgba(255,255,255,.02));transition:.18s}
+.ans:hover{border-color:var(--gold);transform:translateX(4px);background:rgba(230,200,140,.09)}
+.ans .k{width:34px;height:34px;flex:none;border-radius:11px;display:grid;place-items:center;
+  font-family:var(--tSerif);font-weight:900;color:var(--gold);border:1px solid var(--linedark);background:rgba(0,0,0,.25)}
+.ans b{display:block;font-size:1.02rem}
+.ans span{display:block;color:var(--mutedd);font-size:.84rem;margin-top:2px}
+.analyzing{text-align:center;padding:70px 12px}
+.orb{width:110px;height:110px;margin:0 auto 22px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#fff,var(--rose) 45%,var(--wine) 75%);
+  box-shadow:0 0 60px rgba(217,115,142,.55);animation:pulse 1.1s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.13);opacity:1}}
+
+/* ---------- 角色卡 ---------- */
+.cardframe{position:relative;border-radius:20px;overflow:hidden;display:block;width:100%;
+  border:1px solid rgba(230,200,140,.28);background:#180f1b;box-shadow:0 18px 48px rgba(0,0,0,.5)}
+.cardframe svg{display:block;width:100%;height:auto}
+.cardframe.tier-SSR{border-color:rgba(230,200,140,.75);box-shadow:0 0 0 1px rgba(230,200,140,.3),0 20px 60px rgba(176,135,63,.3)}
+.cardframe.tier-UR{border-color:#ffd9e6;box-shadow:0 0 0 1px rgba(255,217,230,.5),0 20px 70px rgba(217,115,142,.45)}
+.cardframe.tier-SR{border-color:rgba(178,148,221,.55)}
+.holo{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;opacity:0;
+  background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 46%,rgba(255,214,236,.4) 52%,transparent 66%);
+  background-size:260% 100%}
+.cardframe.tier-SSR .holo,.cardframe.tier-UR .holo{opacity:1;animation:holo 4.6s linear infinite}
+@keyframes holo{0%{background-position:180% 0}100%{background-position:-80% 0}}
+.tierbadge{position:absolute;top:10px;left:10px;z-index:3;font-family:var(--tSerif);font-weight:900;
+  font-size:.72rem;letter-spacing:.16em;padding:5px 10px;border-radius:8px;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2)}
+.tierbadge.SSR{color:#2a1c07;background:linear-gradient(140deg,#f6e2b4,#c69a4f);border:0}
+.tierbadge.UR{color:#4a0f26;background:linear-gradient(140deg,#ffe6f0,#ffb3cd,#e6c88c);border:0}
+.tierbadge.SR{color:#efe6ff;background:linear-gradient(140deg,#6d4d9c,#3d2a58)}
+.tierbadge.R{color:#efe3e3;background:rgba(60,45,60,.85)}
+.newbadge{position:absolute;top:10px;right:10px;z-index:3;font-size:.66rem;font-weight:900;padding:4px 8px;border-radius:7px;background:var(--rose);color:#fff}
+
+/* 圖鑑格 */
+.dexgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(154px,1fr));gap:12px}
+.dextile{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--linedark);
+  background:#1b1220;transition:.2s;text-align:left}
+.dextile:hover{transform:translateY(-4px);border-color:var(--gold)}
+.dextile .art{position:relative}
+.dextile .meta{padding:10px 12px 12px}
+.dextile .meta b{font-family:var(--tSerif);font-size:.98rem;display:block}
+.dextile .meta small{color:var(--mutedd);font-size:.74rem}
+.dextile.locked .art{filter:grayscale(1) brightness(.32)}
+.dextile.locked .meta b{color:var(--mutedd)}
+.lockmark{position:absolute;inset:0;display:grid;place-items:center;z-index:2;font-size:2rem;color:rgba(255,255,255,.35)}
+.dexbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.filter{border:1px solid var(--linedark);border-radius:999px;padding:7px 13px;font-size:.8rem;font-weight:800;color:var(--mutedd)}
+.filter.on{background:rgba(230,200,140,.16);color:var(--gold);border-color:rgba(230,200,140,.5)}
+
+/* ---------- 角色詳情 sheet ---------- */
+.sheet{position:fixed;inset:0;z-index:120;display:none}
+.sheet.on{display:block}
+.sheet-bg{position:absolute;inset:0;background:rgba(10,6,12,.82);backdrop-filter:blur(8px)}
+.sheet-in{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:min(720px,100%);
+  max-height:92vh;overflow:auto;border-radius:26px 26px 0 0;padding:18px 18px calc(28px + env(safe-area-inset-bottom,0px));
+  background:linear-gradient(180deg,#2b1d31,#170f1b);border:1px solid var(--linedark);border-bottom:0;
+  animation:sheetUp .34s cubic-bezier(.2,.8,.25,1)}
+@keyframes sheetUp{from{transform:translate(-50%,60px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+.sheet-grab{width:46px;height:5px;border-radius:99px;background:rgba(255,255,255,.22);margin:0 auto 14px}
+.sheet-close{position:sticky;top:0;float:right;margin:-6px -4px 0 0;width:38px;height:38px;border-radius:50%;
+  background:rgba(0,0,0,.5);border:1px solid var(--linedark);display:grid;place-items:center;z-index:5}
+.sheetgrid{display:grid;grid-template-columns:minmax(0,240px) 1fr;gap:18px}
+.tabs{display:flex;gap:6px;margin:14px 0 12px;flex-wrap:wrap}
+.tabs button{border:1px solid var(--linedark);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:800;color:var(--mutedd)}
+.tabs button.on{background:var(--gold);color:#2a1c07;border-color:var(--gold)}
+.lore{font-size:.95rem;color:var(--pearl);opacity:.92}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.88rem;margin-top:10px}
+.kv dt{color:var(--gold);font-weight:800;white-space:nowrap}
+.kv dd{margin:0;color:var(--pearl)}
+.skill{border:1px solid var(--linedark);border-radius:14px;padding:12px 14px;margin-top:9px;background:rgba(0,0,0,.22)}
+.skill b{font-family:var(--tSerif);color:var(--gold);display:block}
+.skill small{color:var(--mutedd);font-size:.82rem}
+.statrow{display:grid;gap:7px;margin-top:12px}
+.stat{display:grid;grid-template-columns:64px 1fr 34px;align-items:center;gap:9px;font-size:.84rem}
+.track{height:8px;border-radius:99px;background:rgba(255,255,255,.09);overflow:hidden}
+.track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--rose),var(--gold));transition:width .8s cubic-bezier(.2,.8,.2,1)}
+
+/* 商品 */
+.gear{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
+.gearitem{display:block;border:1px solid var(--linedark);border-radius:15px;padding:13px;text-decoration:none;
+  background:linear-gradient(150deg,rgba(255,255,255,.07),rgba(255,255,255,.02));transition:.18s}
+.gearitem:hover{border-color:var(--gold);transform:translateY(-3px)}
+.gearitem b{display:block;font-size:.95rem}
+.gearitem small{color:var(--mutedd);font-size:.76rem}
+.gearitem .match{margin-top:7px;font-family:var(--tSerif);font-size:1.2rem;color:var(--gold)}
+
+/* ---------- 召喚特效 ---------- */
+.summon{position:fixed;inset:0;z-index:300;display:none;background:#07040a;overflow:hidden}
+.summon.on{display:block}
+.summon canvas{position:absolute;inset:0;width:100%;height:100%}
+.sm-orb{position:absolute;left:50%;top:50%;width:120px;height:120px;margin:-60px 0 0 -60px;border-radius:50%;
+  background:radial-gradient(circle at 36% 32%,#fff,#ffd9e6 30%,var(--rose) 55%,#3a1024 85%);
+  box-shadow:0 0 90px 20px rgba(217,115,142,.5);opacity:0}
+.sm-rays{position:absolute;left:50%;top:50%;width:1600px;height:1600px;margin:-800px 0 0 -800px;opacity:0}
+.sm-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.sm-ring{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;
+  border:3px solid rgba(255,255,255,.85);opacity:0}
+.sm-card{position:absolute;left:50%;top:50%;width:min(330px,74vw);transform:translate(-50%,-50%) scale(.6) rotateY(90deg);
+  opacity:0;perspective:900px}
+.sm-cap{position:absolute;left:0;right:0;bottom:calc(28px + env(safe-area-inset-bottom,0px));text-align:center;padding:0 20px;opacity:0}
+.sm-cap h3{font-size:clamp(1.5rem,5vw,2.2rem);letter-spacing:.02em}
+.sm-cap .w{color:var(--gold);font-size:.9rem;letter-spacing:.18em;margin-top:4px}
+.sm-skip{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;z-index:9;
+  border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 16px;font-size:.82rem;font-weight:800;color:#fff;background:rgba(0,0,0,.35)}
+.sm-actions{position:absolute;left:0;right:0;bottom:calc(24px + env(safe-area-inset-bottom,0px));display:flex;gap:10px;justify-content:center;padding:0 16px;opacity:0;flex-wrap:wrap}
+@keyframes shake{0%,100%{transform:translate(0,0)}20%{transform:translate(-6px,4px)}40%{transform:translate(5px,-5px)}60%{transform:translate(-4px,-3px)}80%{transform:translate(4px,4px)}}
+.shaking{animation:shake .45s ease}
+
+/* ---------- 寶箱 ---------- */
+.chestwrap{position:relative;display:grid;place-items:center;padding:20px 0 6px;min-height:230px}
+.chest{width:172px;height:150px;position:relative;transform-style:preserve-3d}
+.chest .lid,.chest .box{position:absolute;left:0;right:0;border-radius:12px;border:2px solid #8a6524}
+.chest .lid{top:0;height:64px;background:linear-gradient(180deg,#f0d69f,#b98f45);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.3,1.4,.4,1)}
+.chest .box{bottom:0;height:96px;background:linear-gradient(180deg,#c99f57,#7d5a24)}
+.chest .lock{position:absolute;left:50%;top:52px;width:34px;height:38px;margin-left:-17px;border-radius:7px;z-index:3;
+  background:linear-gradient(160deg,#fff3d4,#c69a4f);border:2px solid #7d5a24}
+.chest.shake{animation:chestShake .32s ease infinite}
+@keyframes chestShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+.chest.open .lid{transform:rotateX(-118deg)}
+.chest.open{filter:drop-shadow(0 0 40px rgba(230,200,140,.7))}
+.chestcanvas{position:absolute;inset:-40px;width:calc(100% + 80px);height:calc(100% + 80px);pointer-events:none}
+
+/* ---------- 碰撞競技場 ---------- */
+.arena{position:relative;height:240px;border-radius:20px;border:1px solid var(--linedark);overflow:hidden;
+  background:radial-gradient(circle at 50% 50%,rgba(217,115,142,.16),transparent 65%),#150e1a}
+.arena canvas{position:absolute;inset:0;width:100%;height:100%}
+.mini{position:absolute;top:50%;width:96px;margin-top:-66px;border-radius:12px;overflow:hidden;border:1px solid rgba(230,200,140,.45);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);transition:none}
+.mini.l{left:14px}
+.mini.r{right:14px}
+.impact{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;
+  border:3px solid #fff;opacity:0}
+.bondout{text-align:center;padding:14px}
+.bondname{font-family:var(--tSerif);font-size:1.5rem;color:var(--gold)}
+
+/* ---------- 戰隊 ---------- */
+.slots{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+.slot{aspect-ratio:3/4;border-radius:14px;border:1px dashed rgba(230,200,140,.35);display:grid;place-items:center;
+  background:rgba(255,255,255,.03);overflow:hidden;color:var(--mutedd);font-size:1.6rem}
+.slot.filled{border-style:solid;border-color:rgba(230,200,140,.6)}
+.slot svg{width:100%;height:100%}
+.picker{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;max-height:270px;overflow:auto;padding:4px 2px}
+.pick{border:1px solid var(--linedark);border-radius:12px;overflow:hidden;position:relative;background:#1b1220}
+.pick.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(230,200,140,.35)}
+.pick small{display:block;text-align:center;padding:5px 3px;font-size:.68rem;font-weight:800}
+
+/* ---------- 每日 / Boss ---------- */
+.streak{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin:14px 0}
+.day{border:1px solid var(--linedark);border-radius:13px;padding:10px 4px;text-align:center;font-size:.74rem;font-weight:800;color:var(--mutedd)}
+.day.on{background:linear-gradient(150deg,rgba(230,200,140,.25),rgba(217,115,142,.18));color:var(--gold);border-color:rgba(230,200,140,.55)}
+.day.today{box-shadow:0 0 0 2px var(--rose)}
+.day b{display:block;font-size:.95rem}
+.flame{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:radial-gradient(circle at 50% 65%,#ffd28a,#e0603f 60%,transparent 72%);animation:flick 1.4s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1)}50%{transform:scale(1.14) translateY(-2px)}}
+.hp{height:24px;border-radius:99px;background:rgba(0,0,0,.45);border:1px solid var(--linedark);overflow:hidden;position:relative}
+.hp i{display:block;height:100%;background:linear-gradient(90deg,#e0603f,#d9738e,#b294dd);transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.hp span{position:absolute;inset:0;display:grid;place-items:center;font-size:.8rem;font-weight:900;text-shadow:0 1px 3px rgba(0,0,0,.7)}
+.timer{display:flex;gap:8px;margin:12px 0}
+.tbox{border:1px solid var(--linedark);border-radius:13px;padding:9px 12px;text-align:center;min-width:60px;background:rgba(0,0,0,.28)}
+.tbox b{display:block;font-family:var(--tSerif);font-size:1.3rem;color:var(--gold)}
+.tbox small{font-size:.66rem;color:var(--mutedd);letter-spacing:.12em}
+.dmg{position:absolute;font-family:var(--tSerif);font-weight:900;color:#ffd9e6;pointer-events:none;
+  text-shadow:0 2px 10px rgba(217,115,142,.8);animation:dmgUp 1.1s ease-out forwards}
+@keyframes dmgUp{0%{opacity:0;transform:translateY(0) scale(.7)}20%{opacity:1;transform:translateY(-14px) scale(1.2)}100%{opacity:0;transform:translateY(-64px) scale(1)}}
+.missions{display:grid;gap:9px}
+.mission{display:flex;align-items:center;gap:12px;border:1px solid var(--linedark);border-radius:15px;padding:13px 15px;background:rgba(255,255,255,.04)}
+.mission.done{border-color:rgba(132,214,201,.45);background:rgba(132,214,201,.09)}
+.mission .tick{width:26px;height:26px;flex:none;border-radius:50%;border:2px solid var(--linedark);display:grid;place-items:center;font-size:.8rem}
+.mission.done .tick{background:var(--mint);border-color:var(--mint);color:#0d2c27}
+.mission b{display:block;font-size:.96rem}
+.mission small{color:var(--mutedd);font-size:.78rem}
+.rewardchip{margin-left:auto;flex:none;font-size:.74rem;font-weight:900;color:var(--gold);border:1px solid rgba(230,200,140,.4);border-radius:999px;padding:4px 10px}
+
+/* ---------- 分享 ---------- */
+.sharegrid{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:20px;align-items:start}
+.sharecanvas{width:100%;border-radius:18px;border:1px solid var(--linedark);box-shadow:0 20px 60px rgba(0,0,0,.5);display:block}
+.themes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.theme{width:38px;height:38px;border-radius:11px;border:2px solid transparent}
+.theme.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(230,200,140,.3)}
+.reflink{display:flex;gap:8px;align-items:center;border:1px solid var(--linedark);border-radius:13px;padding:11px 13px;
+  background:rgba(0,0,0,.3);font-size:.82rem;word-break:break-all;margin-top:12px}
+
+/* ---------- 通用 ---------- */
+.toast{position:fixed;left:50%;bottom:calc(var(--hud) + 18px);transform:translate(-50%,26px);z-index:250;
+  background:rgba(20,14,24,.96);border:1px solid var(--gold);color:var(--paper);border-radius:14px;
+  padding:12px 20px;font-weight:800;font-size:.9rem;opacity:0;transition:.28s;pointer-events:none;max-width:88vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.modal{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:18px;background:rgba(8,5,10,.8);backdrop-filter:blur(6px)}
+.modal.on{display:grid}
+.modal-in{width:min(460px,100%);border-radius:24px;padding:24px;border:1px solid var(--linedark);
+  background:linear-gradient(170deg,#2c1e32,#170f1c);max-height:88vh;overflow:auto}
+.field{width:100%;border:1px solid var(--linedark);border-radius:13px;padding:13px 15px;background:rgba(0,0,0,.35);color:var(--paper);margin-top:9px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.badgeline{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.badgeline span{font-size:.74rem;font-weight:800;padding:5px 10px;border-radius:999px;border:1px solid var(--linedark);color:var(--mutedd)}
+.statebox{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.74rem;color:var(--mutedd);
+  background:rgba(0,0,0,.4);border:1px solid var(--linedark);border-radius:13px;padding:13px;white-space:pre-wrap;word-break:break-all;max-height:220px;overflow:auto}
+.notice{border-left:3px solid var(--gold);padding:10px 14px;background:rgba(230,200,140,.08);border-radius:0 12px 12px 0;font-size:.86rem;color:var(--pearl)}
+
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto;padding:26px 0 10px;text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .hero .btnrow,.trustrow{justify-content:center}
+  .heroStage{min-height:400px;order:-1}
+  .sheetgrid{grid-template-columns:1fr}
+  .sharegrid{grid-template-columns:1fr}
+  .slots{grid-template-columns:repeat(5,1fr);gap:6px}
+}
+@media(max-width:400px){.dexgrid{grid-template-columns:repeat(2,1fr);gap:10px}}
+</style>
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="glowbg"></div>
+<div class="layer">
+
+<header class="topbar">
+  <div class="topbar-in">
+    <div class="logo">
+      <i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"><path d="M3 8c3 1 6 0 8-3 1 4 3 4 4 0 2 3 5 4 6 3l-2 11H5z"/></svg></i>
+      <span>凱莉愛內衣宇宙</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="chipset">
+      <button class="chip" id="langBtn">EN</button>
+      <button class="chip" id="easyBtn" data-k="easyChip">大字</button>
+      <button class="chip on" id="soundBtn">🔊</button>
+      <button class="chip" id="meBtn" data-k="meChip">我的</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════ 開場 ══════════ -->
+<section class="view on" id="v-home">
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="kicker">V5 CINEMATIC · KELLY LOVE FIT UNIVERSE</div>
+        <h1 data-k="heroT">妳的內衣<br>其實有<em>名字</em>。</h1>
+        <p class="lead" data-k="heroD">12 位角色，就是凱莉愛的 12 種版型答案：深杯、高脇、無鋼圈、軟鋼圈、無痕、涼感、寬肩分壓、穩定下圍。6 題測出妳的本命角色，收集、召喚、組戰隊、邀好友解鎖限定。</p>
+        <div class="btnrow">
+          <button class="btn btn-gold" id="goQuiz" data-k="ctaStart">開始 6 題測驗</button>
+          <button class="btn btn-ghost" id="goDex" data-k="ctaDex">先看 12 位角色</button>
+        </div>
+        <div class="trustrow">
+          <span data-k="t1">不用填罩杯尺寸</span>
+          <span data-k="t2">分享卡不顯示 size</span>
+          <span data-k="t3">角色直接連到真商品</span>
+          <span data-k="t4">18–99 歲都看得懂</span>
+        </div>
+      </div>
+      <div class="heroStage">
+        <div class="heroCard c" id="heroC"></div>
+        <div class="heroCard b" id="heroB"></div>
+        <div class="heroCard" id="heroA"></div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:10px">
+      <div class="kicker" data-k="howK">HOW IT WORKS</div>
+      <h2 style="margin:8px 0 14px;font-size:1.4rem" data-k="howT">為什麼要玩，而不是只做測驗</h2>
+      <div class="gear" style="margin:0">
+        <div class="gearitem" style="cursor:default">
+          <b data-k="how1t">① 測出角色</b>
+          <small data-k="how1d">6 題只問實際穿著困擾，直接對應凱莉愛 A–E 版型結論。</small>
+        </div>
+        <div class="gearitem" style="cursor:default">
+          <b data-k="how2t">② 收集與召喚</b>
+          <small data-k="how2d">12 角色＋隱藏限定。SSR 召喚有完整運鏡，抽到會想截圖。</small>
+        </div>
+        <div class="gearitem" style="cursor:default">
+          <b data-k="how3t">③ 好友碰撞</b>
+          <small data-k="how3d">兩張卡撞出羈絆技，好友完成測驗就開寶箱。</small>
+        </div>
+        <div class="gearitem" style="cursor:default">
+          <b data-k="how4t">④ 回到選內衣</b>
+          <small data-k="how4d">每張角色卡最後都給 3 個真商品連結、LINE 顧問與門市試穿。</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 測驗 / 我的卡 ══════════ -->
+<section class="view" id="v-quiz">
+  <div class="wrap">
+
+    <div id="quizIntro">
+      <div class="vhead">
+        <div class="kicker">STEP 01 · FIT QUIZ</div>
+        <h2 data-k="quizT">6 題，找出妳最缺的那一種版型力量</h2>
+        <p class="sub" data-k="quizD">題目沿用凱莉愛「10 秒胸型測驗」的 A–E 困擾邏輯，再補上舒適、無痕、涼感偏好。結果不會說妳是哪種胸型，只告訴妳該找什麼結構。</p>
+      </div>
+      <div class="panel">
+        <p style="font-size:1.05rem;font-weight:800" data-k="quizHint">沒有標準答案，選最常發生的那一項就好。</p>
+        <div class="rule"></div>
+        <div class="badgeline">
+          <span data-k="qb1">約 40 秒</span><span data-k="qb2">不需註冊</span><span data-k="qb3">不問尺寸</span>
+        </div>
+        <div class="btnrow" style="margin-top:16px">
+          <button class="btn btn-gold" id="startQuiz" data-k="ctaBegin">開始</button>
+          <a class="btn btn-ghost" href="https://www.kellylove.tw/page/bra-size-guide" target="_blank" rel="noopener" data-k="ctaSize">先看尺寸指南</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="quizBox" class="hidden">
+      <div class="quizbar">
+        <div class="ring" id="ring"><b id="ringT">0%</b></div>
+        <div>
+          <div class="kicker" id="qCount">Q1 / 6</div>
+          <div class="qtitle" id="qTitle">—</div>
+        </div>
+      </div>
+      <div class="answers" id="answers"></div>
+      <div class="btnrow" style="margin-top:16px">
+        <button class="btn btn-sm btn-ghost" id="qBack" data-k="ctaBack">上一題</button>
+      </div>
+    </div>
+
+    <div id="analyzing" class="hidden">
+      <div class="analyzing">
+        <div class="orb"></div>
+        <h2 data-k="anaT">正在生成妳的凱莉愛角色</h2>
+        <p class="sub" style="margin-top:8px" data-k="anaD">杯容 × 高脇 × 下圍 × 肩帶 × 舒適 × 無痕</p>
+      </div>
+    </div>
+
+    <div id="resultBox" class="hidden">
+      <div class="vhead">
+        <div class="kicker" data-k="resK">YOUR ROLE</div>
+        <h2 data-k="resT">妳的角色卡誕生了</h2>
+      </div>
+      <div class="sheetgrid">
+        <div>
+          <div id="resultCard"></div>
+          <div class="btnrow" style="margin-top:12px">
+            <button class="btn btn-sm btn-gold" id="toShare" data-k="ctaShare">做分享卡</button>
+            <button class="btn btn-sm btn-ghost" id="retake" data-k="ctaRetake">重測</button>
+          </div>
+        </div>
+        <div>
+          <div class="panel" style="padding:20px">
+            <h3 id="resName" style="font-size:1.5rem">—</h3>
+            <p class="sub" id="resType" style="margin-top:2px">—</p>
+            <p class="lore" id="resQuote" style="margin-top:12px;font-family:var(--tSerif);color:var(--gold)">—</p>
+            <div class="rule"></div>
+            <div class="kicker" data-k="attrK">妳目前最需要的 6 種力量</div>
+            <div class="statrow" id="resStats"></div>
+            <div class="rule"></div>
+            <div class="kicker" data-k="gearK">先看這 3 款</div>
+            <p class="micro" data-k="gearD">縮小選擇範圍的第一步；實際適配仍以商品頁尺寸表或 LINE 顧問確認為準。</p>
+            <div class="gear" id="resGear"></div>
+            <div class="btnrow" style="margin-top:14px">
+              <a class="btn btn-sm btn-rose" href="https://lin.ee/swq79sA" target="_blank" rel="noopener" data-k="ctaLine">LINE 尺寸諮詢</a>
+              <a class="btn btn-sm btn-ghost" href="https://www.kellylove.tw/page/in-store-fitting" target="_blank" rel="noopener" data-k="ctaStore">高雄門市試穿</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="sharePanel" style="margin-top:18px">
+        <div class="kicker">SHARE</div>
+        <h2 style="font-size:1.35rem;margin:6px 0 4px" data-k="shareT">做一張可以直接曬的 1080×1920</h2>
+        <p class="sub" data-k="shareD">卡面不放罩杯尺寸，只放角色、BRA CODE、版型需求與邀請碼。好友從妳的連結完成測驗，就會進妳的戰隊。</p>
+        <div class="rule"></div>
+        <div class="sharegrid">
+          <div>
+            <div class="themes" id="themes"></div>
+            <canvas class="sharecanvas" id="shareCanvas" width="1080" height="1920"></canvas>
+          </div>
+          <div>
+            <div class="btnrow">
+              <button class="btn btn-gold" id="dlShare" data-k="ctaDownload">下載分享卡</button>
+              <button class="btn btn-ghost" id="sysShare" data-k="ctaSysShare">系統分享</button>
+              <button class="btn btn-ghost" id="copyLink" data-k="ctaCopy">複製邀請連結</button>
+            </div>
+            <div class="reflink"><span id="refUrl">—</span></div>
+            <div class="rule"></div>
+            <p class="micro" data-k="shareNote">每個連結都帶 referral_id。好友完成測驗後，後端會回寫妳的戰隊、圖鑑、寶箱與獎勵進度——前端只負責演出，發獎一律由後端判定，避免刷單。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ 圖鑑 ══════════ -->
+<section class="view" id="v-dex">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="kicker">COLLECTION</div>
+      <h2 data-k="dexT">12 位角色 ＝ 12 種選內衣的方向</h2>
+      <p class="sub" data-k="dexD">每張卡都綁定版型關鍵字、專屬世界觀、兩個技能，以及凱莉愛的真實商品。點開任一張看完整設定。</p>
+    </div>
+    <div class="dexbar">
+      <button class="filter on" data-f="all" data-k="fAll">全部</button>
+      <button class="filter" data-f="own" data-k="fOwn">已解鎖</button>
+      <button class="filter" data-f="SSR">SSR</button>
+      <button class="filter" data-f="SR">SR</button>
+      <button class="filter" data-f="R">R</button>
+      <span class="spacer"></span>
+      <span class="chip" id="dexCount">0 / 12</span>
+    </div>
+    <div class="dexgrid" id="dexGrid"></div>
+  </div>
+</section>
+
+<!-- ══════════ 召喚 ══════════ -->
+<section class="view" id="v-gacha">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="kicker">SUMMON</div>
+      <h2 data-k="gachaT">召喚儀式</h2>
+      <p class="sub" data-k="gachaD">SSR 代表卡片稀有度，不代表胸型比較好。每一位角色都對應真實版型需求，抽到誰都能拿去選內衣。</p>
+    </div>
+
+    <div class="grid2" style="align-items:start">
+      <div class="panel">
+        <div class="kicker" data-k="ticketK">召喚券</div>
+        <h3 style="font-size:1.9rem;margin:6px 0"><span id="ticketN">3</span> <span style="font-size:.9rem;color:var(--mutedd)" data-k="ticketU">張</span></h3>
+        <p class="micro" data-k="ticketD">完成測驗、每日簽到、分享、好友完成測驗都會拿到召喚券。</p>
+        <div class="btnrow" style="margin-top:14px">
+          <button class="btn btn-gold" id="draw1" data-k="ctaDraw1">單抽</button>
+          <button class="btn btn-ghost" id="draw10" data-k="ctaDraw10">十連（保底 SSR）</button>
+        </div>
+        <div class="rule"></div>
+        <div class="kicker" data-k="keyK">鑰匙</div>
+        <p class="micro" style="margin-top:6px"><b id="keyN" style="color:var(--gold);font-size:1.1rem">0</b>
+          <span data-k="keyD">把。重複的角色會轉成鑰匙；集滿 10 把可以指定解鎖一位角色。</span></p>
+        <div class="btnrow" style="margin-top:10px">
+          <button class="btn btn-sm" id="exchangeBtn" data-k="ctaExchange">用 10 把鑰匙指定解鎖</button>
+        </div>
+        <div id="exchangeBox" class="hidden" style="margin-top:12px">
+          <div class="picker" id="exchangeGrid"></div>
+        </div>
+        <div class="rule"></div>
+        <div class="kicker" data-k="rateK">機率公開</div>
+        <div class="kv" style="margin-top:8px">
+          <dt>SSR</dt><dd>12%（十連保底 1 張）</dd>
+          <dt>SR</dt><dd>38%</dd>
+          <dt>R</dt><dd>50%</dd>
+          <dt data-k="rateUR">限定 UR</dt><dd data-k="rateURd">不在卡池：7 日簽到或擊敗 Boss 取得</dd>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="kicker" data-k="chestK">好友寶箱</div>
+        <h3 style="font-size:1.3rem;margin:6px 0" data-k="chestT">3 位好友完成測驗 → 金色寶箱</h3>
+        <div class="chestwrap">
+          <canvas class="chestcanvas" id="chestCanvas"></canvas>
+          <div class="chest" id="chest"><div class="lid"></div><div class="box"></div><div class="lock"></div></div>
+        </div>
+        <div class="hp" style="height:16px"><i id="chestBar" style="width:0%"></i></div>
+        <p class="micro" style="margin-top:8px"><span id="chestP">0 / 3</span> <span data-k="chestD">位好友已完成。好友必須真的做完測驗才算有效邀請。</span></p>
+        <div class="btnrow" style="margin-top:12px">
+          <button class="btn btn-gold" id="openChest" data-k="ctaChest" disabled>開啟寶箱</button>
+          <button class="btn btn-sm btn-ghost" id="simFriend" data-k="ctaSim">模擬好友完成</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <div class="kicker" data-k="recentK">最近召喚</div>
+      <div class="dexgrid" id="recentGrid" style="margin-top:12px"></div>
+      <p class="micro" id="recentEmpty" data-k="recentE">還沒有召喚紀錄。抽第一張看看。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 戰隊 ══════════ -->
+<section class="view" id="v-squad">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="kicker">SQUAD</div>
+      <h2 data-k="squadT">好友卡碰撞 → 戰隊合成卡</h2>
+      <p class="sub" data-k="squadD">兩張角色卡對撞會產生「羈絆技」；選 3–5 位組隊則能合成一張專屬戰隊卡，稀有度由屬性總和決定。</p>
+    </div>
+
+    <div class="panel">
+      <div class="kicker" data-k="collideK">卡片碰撞</div>
+      <div class="arena" id="arena">
+        <canvas id="arenaCanvas"></canvas>
+        <div class="mini l" id="miniL"></div>
+        <div class="mini r" id="miniR"></div>
+        <div class="impact" id="impact"></div>
+      </div>
+      <div class="bondout hidden" id="bondOut">
+        <div class="bondname" id="bondName">—</div>
+        <p class="sub" id="bondDesc" style="margin-top:4px">—</p>
+      </div>
+      <div class="btnrow" style="margin-top:12px">
+        <button class="btn btn-gold" id="collideBtn" data-k="ctaCollide">開始碰撞</button>
+        <button class="btn btn-sm btn-ghost" id="shuffleBtn" data-k="ctaShuffle">換一組</button>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <div class="kicker" data-k="fuseK">戰隊合成</div>
+      <h3 style="font-size:1.2rem;margin:6px 0" data-k="fuseT">選 3–5 位隊員</h3>
+      <div class="slots" id="slots"></div>
+      <div class="picker" id="picker"></div>
+      <div class="btnrow" style="margin-top:12px">
+        <button class="btn btn-gold" id="fuseBtn" data-k="ctaFuse" disabled>合成戰隊卡</button>
+        <button class="btn btn-sm btn-ghost" id="clearSquad" data-k="ctaClear">清空</button>
+      </div>
+    </div>
+
+    <div class="panel hidden" id="fusedPanel" style="margin-top:16px">
+      <div class="kicker" data-k="fusedK">妳的戰隊</div>
+      <div class="sheetgrid" style="margin-top:10px">
+        <div id="fusedCard"></div>
+        <div>
+          <h3 id="fusedName" style="font-size:1.5rem">—</h3>
+          <p class="sub" id="fusedType">—</p>
+          <div class="statrow" id="fusedStats"></div>
+          <p class="lore" id="fusedLore" style="margin-top:12px"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ 每日 ══════════ -->
+<section class="view" id="v-daily">
+  <div class="wrap">
+    <div class="vhead">
+      <div class="kicker">DAILY</div>
+      <h2 data-k="dailyT">每天回來，不用一直送折價券</h2>
+      <p class="sub" data-k="dailyD">簽到累積連續天數換召喚券與鑰匙；購物金只放在高價值節點，避免把毛利燒光。</p>
+    </div>
+
+    <div class="panel">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div class="flame">🔥</div>
+        <div>
+          <h3 style="font-size:1.25rem" id="streakT">連續 0 天</h3>
+          <p class="micro" data-k="streakD">連續 7 天可取得隱藏限定角色。中斷會從第 1 天重來。</p>
+        </div>
+        <span class="spacer"></span>
+        <button class="btn btn-gold btn-sm" id="checkinBtn" data-k="ctaCheckin">今日簽到</button>
+      </div>
+      <div class="streak" id="streak"></div>
+    </div>
+
+    <div class="panel" style="margin-top:16px;position:relative;overflow:hidden">
+      <div class="kicker" data-k="bossK">限時活動</div>
+      <h3 style="font-size:1.35rem;margin:6px 0" data-k="bossT">跑杯怪來襲</h3>
+      <p class="sub" data-k="bossD">全站玩家一起打。完成測驗、分享、邀好友、看尺寸指南、到門市試穿都會扣血。</p>
+      <div class="timer" id="timer"></div>
+      <div class="hp"><i id="hpBar" style="width:82%"></i><span id="hpText">82%</span></div>
+      <div class="btnrow" style="margin-top:12px">
+        <button class="btn btn-rose" id="attackBtn" data-k="ctaAttack">出擊</button>
+        <span class="chip" id="phaseChip">PHASE 1</span>
+      </div>
+      <p class="micro" style="margin-top:10px" data-k="bossR">擊敗後，全體參與者解鎖 24 小時限定任務與隱藏角色。</p>
+    </div>
+
+    <div class="panel" style="margin-top:16px">
+      <div class="kicker" data-k="missK">任務</div>
+      <div class="missions" id="missions" style="margin-top:12px"></div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /layer -->
+
+<!-- ══════════ HUD ══════════ -->
+<nav class="hud">
+  <div class="hud-in">
+    <button class="tab on" data-v="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-k="navHome">首頁</span></button>
+    <button class="tab" data-v="quiz"><svg viewBox="0 0 24 24"><path d="M9 9a3 3 0 1 1 4 2.8c-.7.3-1 .9-1 1.7v.5"/><circle cx="12" cy="17.5" r=".6" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg><span data-k="navQuiz">測驗</span></button>
+    <button class="tab" data-v="dex"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="16" rx="1.4"/><rect x="14" y="4" width="7" height="9" rx="1.4"/><path d="M14 17h7"/></svg><span data-k="navDex">圖鑑</span></button>
+    <button class="tab" data-v="gacha"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 4.6 5 .7-3.6 3.5.9 5-4.5-2.4-4.5 2.4.9-5L4.8 8.3l5-.7z"/></svg><span data-k="navGacha">召喚</span></button>
+    <button class="tab" data-v="daily"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.4"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><span data-k="navDaily">每日</span></button>
+  </div>
+</nav>
+
+<!-- ══════════ 角色詳情 ══════════ -->
+<div class="sheet" id="sheet">
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet-in">
+    <button class="sheet-close" data-close aria-label="關閉">✕</button>
+    <div class="sheet-grab"></div>
+    <div class="sheetgrid">
+      <div>
+        <div id="sheetCard"></div>
+        <div class="btnrow" style="margin-top:10px">
+          <button class="btn btn-sm btn-gold" id="sheetShare" data-k="ctaMakeShare">做成分享卡</button>
+        </div>
+      </div>
+      <div>
+        <h2 id="sheetName" style="font-size:1.7rem">—</h2>
+        <p class="sub" id="sheetType">—</p>
+        <p style="font-family:var(--tSerif);color:var(--gold);margin-top:10px" id="sheetQuote">—</p>
+        <div class="tabs" id="sheetTabs">
+          <button class="on" data-t="world" data-k="tabWorld">世界觀</button>
+          <button data-t="skill" data-k="tabSkill">技能</button>
+          <button data-t="stat" data-k="tabStat">屬性</button>
+          <button data-t="gear" data-k="tabGear">裝備</button>
+        </div>
+        <div id="sheetBody"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ 召喚特效 ══════════ -->
+<div class="summon" id="summon">
+  <canvas id="sumCanvas"></canvas>
+  <div class="sm-rays" id="smRays"></div>
+  <div class="sm-ring" id="smRing"></div>
+  <div class="sm-orb" id="smOrb"></div>
+  <div class="sm-card" id="smCard"></div>
+  <div class="sm-cap" id="smCap"><h3 id="smName">—</h3><div class="w" id="smWorld">—</div></div>
+  <div class="sm-flash" id="smFlash"></div>
+  <button class="sm-skip" id="smSkip" data-k="ctaSkip">跳過</button>
+  <div class="sm-actions" id="smActions">
+    <button class="btn btn-gold btn-sm" id="smAgain" data-k="ctaAgain">再抽一次</button>
+    <button class="btn btn-sm" id="smDetail" data-k="ctaDetail">看角色設定</button>
+    <button class="btn btn-sm btn-ghost" id="smClose" data-k="ctaDone">收下</button>
+  </div>
+</div>
+
+<!-- ══════════ 我的 / 登入 ══════════ -->
+<div class="modal" id="meModal">
+  <div class="modal-in">
+    <div style="display:flex;align-items:center">
+      <div>
+        <div class="kicker">ACCOUNT</div>
+        <h2 style="font-size:1.35rem;margin-top:6px" data-k="meT">保存角色與進度</h2>
+      </div>
+      <span class="spacer"></span>
+      <button class="chip" data-close-modal>✕</button>
+    </div>
+    <p class="sub" style="margin-top:8px" data-k="meD">綁定後，角色圖鑑、戰隊、簽到與邀請獎勵會寫回 CRM，換裝置也不會消失。</p>
+    <div class="btnrow" style="margin-top:14px">
+      <button class="btn btn-rose" id="lineBtn" style="flex:1" data-k="ctaLineLogin">使用 LINE 登入</button>
+    </div>
+    <div class="rule"></div>
+    <div class="kicker" data-k="emailK">或用 Email</div>
+    <input class="field" id="emailIn" type="email" placeholder="you@example.com" autocomplete="email">
+    <div class="btnrow" style="margin-top:10px">
+      <button class="btn btn-sm" id="otpBtn" data-k="ctaOtp">寄送驗證碼</button>
+    </div>
+    <div id="otpBox" class="hidden">
+      <input class="field" id="otpIn" inputmode="numeric" placeholder="6 位數驗證碼">
+      <div class="btnrow" style="margin-top:10px">
+        <button class="btn btn-sm btn-gold" id="verifyBtn" data-k="ctaVerify">驗證並登入</button>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <div class="kicker" data-k="stateK">目前狀態</div>
+    <div class="statebox" id="stateBox">—</div>
+    <div class="btnrow" style="margin-top:12px">
+      <button class="btn btn-sm btn-ghost" id="syncBtn" data-k="ctaSync">同步 CRM</button>
+      <button class="btn btn-sm btn-ghost" id="resetBtn" data-k="ctaReset">重置進度</button>
+    </div>
+    <div class="notice" style="margin-top:14px" data-k="meNote">尚未填入 LIFF ID 與 API 網域時，會以 Demo 身份在本機執行，所有獎勵僅供演出。</div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js" defer></script>
+<script>
+/* ══════════════════════════════════════════════════════════════
+   凱莉愛內衣宇宙 V5 CINEMATIC
+   上線前只需要改 KELLY_CONFIG 這一段
+   ══════════════════════════════════════════════════════════════ */
+window.KELLY_CONFIG = window.KELLY_CONFIG || {
+  liffId: '',                                   // ← 填入 LINE LIFF ID 即啟用真登入
+  apiBase: '',                                  // ← 例：https://api.kellylove.tw/universe
+  site: 'https://www.kellylove.tw',
+  quizPage: 'https://www.kellylove.tw/page/bra-fit-quiz',
+  lineOA: 'https://lin.ee/swq79sA',
+  utm: 'utm_source=bra_universe&utm_medium=role_card&utm_campaign=v5',
+  eventEndsAt: null,                            // ← ISO 字串；null = 距現在 2 天 8 小時
+  demo: true
+};
+
+(() => {
+'use strict';
+const CFG = window.KELLY_CONFIG;
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+/* ─── 安全儲存（localStorage 不可用時自動退回記憶體） ─── */
+const mem = {};
+const store = {
+  get(k){ try{ const v = localStorage.getItem(k); return v===null?(k in mem?mem[k]:null):v; }catch(e){ return k in mem?mem[k]:null } },
+  set(k,v){ try{ localStorage.setItem(k,v) }catch(e){ mem[k]=v } },
+  del(k){ try{ localStorage.removeItem(k) }catch(e){ delete mem[k] } }
+};
+
+/* ═══════════ 真實商品 ═══════════ */
+const P = {
+  'S66'  :{n:'S66 月光莓粉',  s:'C–I 高脇包覆'},
+  'S66-1':{n:'S66 馥墨綠',    s:'D–I 大罩杯'},
+  'S66-2':{n:'S66 甜蜜迷人膚',s:'C–I 包覆款'},
+  'S66-3':{n:'S66 清新水藍',  s:'C–I 高脇包覆'},
+  '5588' :{n:'5588 黛安娜之吻',s:'E–H 大罩杯集中'},
+  '8878' :{n:'8878 雲柔微紋', s:'一體胸墊 M–XXL'},
+  '1103' :{n:'1103 雲感穩托', s:'加寬肩帶 M–XXL'},
+  'X11'  :{n:'X11 輕盈絲觸',  s:'B–E 絲棉杯'}
+};
+const CAT = {
+  wire  :{slug:'wirefree-zone',        n:'無鋼圈專區'},
+  soft  :{slug:'soft-underwire-zone',  n:'軟鋼圈專區'},
+  side  :{slug:'side-bust-support',    n:'副乳包覆專區'},
+  push  :{slug:'push-up-lift',         n:'集中托高專區'},
+  seam  :{slug:'seamless-bra',         n:'無痕內衣專區'},
+  cool  :{slug:'breathable-cooling',   n:'涼感透氣專區'},
+  plus  :{slug:'plus-size-cup-zone',   n:'大罩杯專區'},
+  band  :{slug:'bra-larger-underbust', n:'下圍加大專區'}
+};
+const itemUrl = (sku,fit)=>`${CFG.site}/item/${sku}?${fit?`fit_result=${fit}&`:''}${CFG.utm}`;
+const catUrl  = slug=>`${CFG.site}/category/${slug}?${CFG.utm}`;
+
+/* ═══════════ 屬性 ═══════════ */
+const STAT_KEYS = ['support','wrap','soft','veil','chill','anchor'];
+const STAT_ZH = {support:'承托',wrap:'包覆',soft:'柔軟',veil:'隱形',chill:'涼感',anchor:'穩固'};
+const STAT_EN = {support:'Support',wrap:'Coverage',soft:'Softness',veil:'Invisible',chill:'Cooling',anchor:'Stability'};
+const ELE_ZH = {support:'承托',wrap:'包覆',soft:'柔軟',veil:'隱形',chill:'涼感',anchor:'穩固',guard:'守護',all:'全能'};
+const ELE_EN = {support:'Support',wrap:'Coverage',soft:'Softness',veil:'Invisible',chill:'Cooling',anchor:'Anchor',guard:'Guardian',all:'Omni'};
+
+/* ═══════════ 12 角色 ＋ 1 隱藏 ═══════════ */
+const ROLES = [
+{
+ key:'deep', code:'DC', tier:'SSR', ele:'support', fit:'A',
+ zh:'深杯・莓光承託者', en:'Deep-Cup Guardian',
+ typeZh:'深杯 × 足夠杯容', typeEn:'Deep cup × Capacity',
+ world:'深杯承託室', worldEn:'Deep Cup Atelier',
+ scene:'一座永遠留著餘裕的圓形工房。這裡不量誰比較大，只量「還差多少空間」。',
+ sceneEn:'A round workshop that always keeps extra room. Nobody measures who is bigger—only how much space is still missing.',
+ foe:'溢杯獸', foeEn:'Overflow Beast',
+ lore:'壓胸、溢杯的時候，第一個念頭常常是「我是不是該穿緊一點」。她會把妳的手拉開：不是穿更緊，是杯容根本不夠。她的工作是先把空間補回來，剩下的支撐才有意義。',
+ loreEn:'When you overflow, the first instinct is to wear it tighter. She stops your hand: the cup simply lacks volume. Restore the space first—support only makes sense afterwards.',
+ quote:'不是胸太大，是杯容要接得住。', quoteEn:'Not too big. The cup just needs to hold you.',
+ skills:[{n:'杯容展開',e:'把「壓胸」的壓力轉成杯深空間，上緣不再切出線條。',nEn:'Volume Unfold',eEn:'Turns compression into cup depth so the top edge stops cutting in.'},
+         {n:'莓光承託',e:'下圍與杯側同時吃力，承托 +30，肩帶不用再拉緊。',nEn:'Berry Lift',eEn:'Band and cup walls share the load. Support +30, no strap tightening.'}],
+ stats:{support:95,wrap:82,soft:60,veil:45,chill:50,anchor:88},
+ gear:['S66','5588','S66-1'], cat:'plus',
+ art:{hair:'longWave', hairC:'#3b1522', hairC2:'#6d2338', skin:'#f2cdb6', bg1:'#4a1226', bg2:'#180a14',
+      accent:'#d9738e', glow:'#ff9fbb', bra:'deepCup', acc:'crown', pat:'arc'}
+},
+{
+ key:'highside', code:'HS', tier:'SSR', ele:'wrap', fit:'D',
+ zh:'高脇・脇線騎士', en:'High-Side Knight',
+ typeZh:'高脇 × 側片支撐', typeEn:'High side × Side panel',
+ world:'高脇防線', worldEn:'High-Side Frontier',
+ scene:'一條沿著身體兩側拉起的防線。她不驅趕任何東西，只負責讓它們待在該待的位置。',
+ sceneEn:'A defence line drawn along both sides of the body. She chases nothing away—she keeps everything where it belongs.',
+ foe:'副乳影', foeEn:'Side Shadow',
+ lore:'高脇不是越高越好。她見過太多人買了很高的脇邊，卻因為罩杯太小，反而把組織擠到手臂旁邊。她只在一種條件下拉起防線：杯容先夠。',
+ loreEn:'Higher sides are not automatically better. Too many buy tall side panels with a cup that is too small, pushing tissue toward the arm instead. She raises the line on one condition: enough cup volume first.',
+ quote:'把胸側穩穩接住，不靠硬擠。', quoteEn:'Contain the sides. Never squeeze them.',
+ skills:[{n:'脇線築牆',e:'側片＋寬背片同時作用，包覆 +35，手臂旁不再有明顯落差。',nEn:'Side Wall',eEn:'Side panel plus wide back work together. Coverage +35, no visible step near the arm.'},
+         {n:'容量校驗',e:'施放前先檢查杯容，杯容不足時技能無效——她拒絕硬擠。',nEn:'Volume Check',eEn:'Fails on purpose if cup volume is insufficient. She refuses to squeeze.'}],
+ stats:{support:88,wrap:96,soft:55,veil:48,chill:52,anchor:84},
+ gear:['S66','S66-2','1103'], cat:'side',
+ art:{hair:'ponytail', hairC:'#2c1224', hairC2:'#5a2144', skin:'#e8b894', bg1:'#3d1024', bg2:'#150912',
+      accent:'#b3576f', glow:'#e58aa6', bra:'highSide', acc:'wing', pat:'shield'}
+},
+{
+ key:'wireless', code:'WL', tier:'SR', ele:'soft', fit:'B',
+ zh:'雲感・無鋼圈精靈', en:'Cloud Wireless Sprite',
+ typeZh:'無鋼圈 × 柔軟貼合', typeEn:'Wireless × Soft fit',
+ world:'雲感舒壓室', worldEn:'Cloud Comfort Room',
+ scene:'一間沒有硬邊的房間。所有支撐都藏在布面裡，妳會忘記自己穿著它。',
+ sceneEn:'A room with no hard edges. Every support hides inside the fabric until you forget you are wearing it.',
+ foe:'勒痕魔', foeEn:'Mark Wraith',
+ lore:'她最常被誤會沒有力氣。其實無鋼圈的支撐來自杯深、背片與下圍的合作——只是不讓妳感覺到。願意每天穿，才是真正的支撐。',
+ loreEn:'People assume she is weak. Wireless support comes from cup depth, back panel and band working together—you simply never feel it. The bra you actually wear every day is the one that supports you.',
+ quote:'舒服不是妥協，是每天都想穿。', quoteEn:'Comfort is why you reach for it every day.',
+ skills:[{n:'無邊承托',e:'去掉鋼圈壓力，柔軟 +40，久坐久站不需要一直調整。',nEn:'Edgeless Lift',eEn:'Removes wire pressure. Softness +40, no constant readjusting.'},
+         {n:'雲層緩衝',e:'一體成型杯面分散壓力，胸口不留紅痕。',nEn:'Cloud Buffer',eEn:'Molded cup spreads pressure so no marks are left.'}],
+ stats:{support:66,wrap:70,soft:96,veil:72,chill:70,anchor:62},
+ gear:['8878','1103','X11'], cat:'wire',
+ art:{hair:'cloudCurl', hairC:'#4a3550', hairC2:'#7d5f88', skin:'#f5d8c4', bg1:'#3a2440', bg2:'#150f1b',
+      accent:'#cfa9b8', glow:'#f0d2de', bra:'wireless', acc:'cloud', pat:'dot'}
+},
+{
+ key:'softwire', code:'SW', tier:'SR', ele:'anchor', fit:'C',
+ zh:'軟鋼・平衡調律師', en:'Soft-Wire Tuner',
+ typeZh:'軟鋼圈 × 穩托集中', typeEn:'Soft underwire × Lift',
+ world:'柔韌平衡所', worldEn:'Soft-Wire Balance Lab',
+ scene:'一座只調整兩件事的實驗室：要多穩、要多柔。她認為兩者從來不需要二選一。',
+ sceneEn:'A lab that tunes only two dials: how stable, how soft. She never accepted that you must pick one.',
+ foe:'硬壓刺', foeEn:'Press Thorn',
+ lore:'想要托高、集中、穩定，又受不了傳統鋼圈的壓迫感——她就是那個中間值。軟鋼圈不是「弱一點的鋼圈」，而是換一種分配重量的方式。',
+ loreEn:'You want lift and centering without traditional wire pressure. She is the middle setting. Soft wire is not a weaker wire—it is a different way to distribute weight.',
+ quote:'要穩，也要留一點柔軟。', quoteEn:'Stable, with softness kept in reserve.',
+ skills:[{n:'柔韌托線',e:'軟鋼圈沿著胸廓分散重量，穩固 +28 且不壓迫肋骨。',nEn:'Flexible Line',eEn:'Soft wire spreads weight along the ribcage. Stability +28 without pressing.'},
+         {n:'集中導引',e:'把胸型帶回中線，而不是往中間硬擠。',nEn:'Guided Centering',eEn:'Guides shape back to centre instead of forcing it inward.'}],
+ stats:{support:84,wrap:80,soft:74,veil:58,chill:56,anchor:90},
+ gear:['5588','S66','S66-3'], cat:'soft',
+ art:{hair:'halfBraid', hairC:'#2a1b3f', hairC2:'#5b3f7d', skin:'#e6bb99', bg1:'#2a1a45', bg2:'#120b1d',
+      accent:'#b294dd', glow:'#d6c0f5', bra:'softWire', acc:'ring', pat:'lattice'}
+},
+{
+ key:'seamless', code:'SL', tier:'SSR', ele:'veil', fit:'',
+ zh:'無痕・光影裁縫', en:'Seamless Couturier',
+ typeZh:'無痕 × 平整杯面', typeEn:'Seamless × Smooth cup',
+ world:'無痕光影室', worldEn:'Invisible Atelier',
+ scene:'一間只有柔光、沒有影子的裁縫室。她剪掉的不是布，是所有會浮出衣服的線。',
+ sceneEn:'An atelier of soft light and no shadow. What she cuts away is not fabric—it is every line that would show.',
+ foe:'痕跡鬼', foeEn:'Line Ghost',
+ lore:'白 T、薄襯衫、貼身針織，最怕的不是尺寸不對，而是「看得出來」。她的存在感就是讓人完全感覺不到她的存在。',
+ loreEn:'Under a white tee or a thin knit, the fear is not the wrong size—it is being visible. Her presence is measured by how completely she disappears.',
+ quote:'最好的存在感，是衣服看不見它。', quoteEn:'The finest presence disappears under clothing.',
+ skills:[{n:'消線術',e:'杯緣與背扣完全隱形，隱形 +45，薄上衣不顯輪廓。',nEn:'Line Erasure',eEn:'Cup edge and hooks vanish. Invisible +45 under thin tops.'},
+         {n:'光面塑形',e:'一體杯面平整不起皺，正面看不到接縫。',nEn:'Smooth Shaping',eEn:'Molded surface stays flat with no visible seams.'}],
+ stats:{support:70,wrap:74,soft:82,veil:98,chill:74,anchor:68},
+ gear:['8878','X11','1103'], cat:'seam',
+ art:{hair:'sleekBob', hairC:'#3a2c33', hairC2:'#6b565f', skin:'#f0cdb2', bg1:'#2e2430', bg2:'#141013',
+      accent:'#e6d6c8', glow:'#fff2e6', bra:'seamless', acc:'veil', pat:'wave'}
+},
+{
+ key:'cooling', code:'IC', tier:'SR', ele:'chill', fit:'',
+ zh:'冰感・微風使者', en:'Cooling Breeze Envoy',
+ typeZh:'涼感 × 透氣結構', typeEn:'Cooling × Breathable',
+ world:'冰感氣旋站', worldEn:'Cooling Vortex Station',
+ scene:'台灣夏天最需要的那三度。她把風收在杯面的孔隙裡，隨身體移動釋放。',
+ sceneEn:'The three degrees a Taiwanese summer needs. She stores wind in the cup’s pores and releases it as you move.',
+ foe:'悶熱蟲', foeEn:'Swelter Grub',
+ lore:'怕熱的人常常在夏天放棄支撐，換成完全沒有結構的款式，然後整個夏天都不舒服。她的答案是：材質降溫、結構照留。',
+ loreEn:'Heat-sensitive wearers often abandon support in summer and regret it for three months. Her answer: cool the material, keep the structure.',
+ quote:'夏天也要穿得住，不是硬撐。', quoteEn:'Survive summer—don’t just endure it.',
+ skills:[{n:'微風循環',e:'透氣孔與涼感紗降低悶熱，涼感 +42。',nEn:'Breeze Cycle',eEn:'Vent structure and cooling yarn drop the heat. Cooling +42.'},
+         {n:'不掉支撐',e:'即使換成薄款，下圍與杯側支撐不衰減。',nEn:'Hold the Line',eEn:'Even in a thin build, band and cup support do not fade.'}],
+ stats:{support:68,wrap:72,soft:84,veil:78,chill:97,anchor:66},
+ gear:['X11','8878','S66-3'], cat:'cool',
+ art:{hair:'shortWave', hairC:'#173b40', hairC2:'#2f6f74', skin:'#e9c3a4', bg1:'#0f2e33', bg2:'#07161a',
+      accent:'#84d6c9', glow:'#b9f2e8', bra:'cooling', acc:'crystal', pat:'ray'}
+},
+{
+ key:'strap', code:'WS', tier:'SR', ele:'support', fit:'E',
+ zh:'寬肩・分壓行者', en:'Wide-Strap Walker',
+ typeZh:'加寬肩帶 × 分散重量', typeEn:'Wide strap × Load spread',
+ world:'分壓工坊', worldEn:'Load Relief Workshop',
+ scene:'一間掛滿肩帶的工坊。牆上寫著一句話：肩膀不該是唯一的支點。',
+ sceneEn:'A workshop hung with straps. One line is painted on the wall: the shoulder should never be the only pivot.',
+ foe:'勒肩枷', foeEn:'Shoulder Yoke',
+ lore:'肩帶越拉越緊，是因為別的地方沒有出力。她做的事情很簡單：把重量還給下圍和背片，肩膀才鬆得下來。',
+ loreEn:'Straps get tightened because nothing else is doing the work. Her job is simple: return the load to the band and the back panel so the shoulders can rest.',
+ quote:'肩帶不需要越拉越緊。', quoteEn:'Support should never mean tighter straps.',
+ skills:[{n:'重量重分配',e:'寬肩帶＋寬背片分擔，肩膀壓力下降，承托 +26。',nEn:'Load Redistribution',eEn:'Wide straps and back share the weight. Shoulder pressure drops, support +26.'},
+         {n:'止滑錨點',e:'肩帶不再往外滑，一整天不用抬手調整。',nEn:'No-Slip Anchor',eEn:'Straps stop sliding outward. No mid-day adjusting.'}],
+ stats:{support:90,wrap:78,soft:80,veil:52,chill:60,anchor:82},
+ gear:['1103','S66','8878'], cat:'plus',
+ art:{hair:'longStraight', hairC:'#3a2413', hairC2:'#6d4a26', skin:'#d9a878', bg1:'#3a2313', bg2:'#160e08',
+      accent:'#e0a35f', glow:'#f5c98f', bra:'wideStrap', acc:'pauldron', pat:'chevron'}
+},
+{
+ key:'band', code:'BA', tier:'SSR', ele:'anchor', fit:'E',
+ zh:'下圍・安定錨', en:'Stable-Band Anchor',
+ typeZh:'穩定下圍 × 不上跑', typeEn:'Stable band × Stays level',
+ world:'安定底盤站', worldEn:'Stable Base Station',
+ scene:'整個宇宙的地基都在這裡。她從不上升，也不允許任何東西往上跑。',
+ sceneEn:'The foundation of the whole universe sits here. She never rises—and lets nothing else ride up either.',
+ foe:'上跑鼠', foeEn:'Ride-Up Rat',
+ lore:'約七成的支撐來自下圍。當背後那條線開始往上跑，肩帶就被迫承擔全部重量。她的任務是把那條線釘回水平。',
+ loreEn:'About seventy percent of support comes from the band. Once that line rides up, the straps are forced to carry everything. Her task is to pin it back to level.',
+ quote:'真正的穩，是底盤先穩。', quoteEn:'Real stability starts at the base.',
+ skills:[{n:'水平釘定',e:'背後下圍維持水平，穩固 +38，抬手不上跑。',nEn:'Level Lock',eEn:'Keeps the back band level. Stability +38, no ride-up when you raise your arms.'},
+         {n:'多排扣支援',e:'寬背片＋多排扣分散拉力，長時間不鬆脫。',nEn:'Multi-Hook Support',eEn:'Wide back and multiple hooks spread tension for all-day hold.'}],
+ stats:{support:92,wrap:80,soft:62,veil:56,chill:58,anchor:98},
+ gear:['S66','5588','S66-1'], cat:'band',
+ art:{hair:'bun', hairC:'#2b2033', hairC2:'#54425f', skin:'#efc9a8', bg1:'#241a35', bg2:'#0f0b16',
+      accent:'#c9a86a', glow:'#ecd8a8', bra:'band', acc:'anchor', pat:'band'}
+},
+{
+ key:'natural', code:'NF', tier:'R', ele:'soft', fit:'B',
+ zh:'自然・貼合詩人', en:'Natural Fit Poet',
+ typeZh:'柔順杯面 × 自然貼合', typeEn:'Soft cup × Natural fit',
+ world:'自然貼合室', worldEn:'Natural Fit Room',
+ scene:'一個不用填滿也能剛好的房間。她相信貼合是彎腰時的事，不是站直時的事。',
+ sceneEn:'A room where nothing needs filling to fit. She believes fit is judged when you bend, not when you stand still.',
+ foe:'空杯靈', foeEn:'Gap Spirit',
+ lore:'空杯不一定代表罩杯太大。上胸較薄、胸型分布偏下、杯型弧度不合，都會造成浮杯。直接縮小尺寸，常常換來下方壓胸、上方仍然空。',
+ loreEn:'Gapping does not always mean the cup is too large. A thinner upper bust, lower distribution or the wrong curve all cause it. Sizing down often trades gapping for compression.',
+ quote:'不是塞滿，而是自然貼住。', quoteEn:'Not filled. Naturally met.',
+ skills:[{n:'彈性上緣',e:'杯緣隨動作貼合，彎腰不浮杯。',nEn:'Elastic Edge',eEn:'The cup edge follows movement—no gapping when you bend.'},
+         {n:'弧度校正',e:'換杯型而不是換尺寸，避免上空下壓。',nEn:'Curve Correction',eEn:'Change the cup shape, not the size, to avoid gapping above and pressure below.'}],
+ stats:{support:64,wrap:68,soft:90,veil:76,chill:72,anchor:60},
+ gear:['8878','X11','1103'], cat:'wire',
+ art:{hair:'midWave', hairC:'#4a2a26', hairC2:'#824c40', skin:'#f3d2b8', bg1:'#3a2028', bg2:'#160d11',
+      accent:'#e8b6a4', glow:'#ffd6c4', bra:'natural', acc:'flower', pat:'petal'}
+},
+{
+ key:'side', code:'SG', tier:'SR', ele:'wrap', fit:'C',
+ zh:'側收・導引者', en:'Side-Support Guide',
+ typeZh:'側收 × 立體罩杯', typeEn:'Side support × Shaping',
+ world:'側收導引線', worldEn:'Side Guidance Route',
+ scene:'一條把散開的東西溫柔帶回來的路。她從不使用蠻力，只使用角度。',
+ sceneEn:'A route that gently brings the scattered back. She never uses force—only angles.',
+ foe:'外擴風', foeEn:'Spread Gale',
+ lore:'集中不是硬擠。厚墊能製造短暫的集中感，代價是壓胸與跑位。她讓側片、杯側與下圍一起把位置帶回來。',
+ loreEn:'Centering is not squeezing. Thick padding buys a moment of cleavage at the cost of compression and shifting. She lets side panels, cup walls and band guide the position back.',
+ quote:'集中，是把位置帶回來。', quoteEn:'Centering is guidance, not force.',
+ skills:[{n:'角度導引',e:'側片角度把胸型帶回中線，包覆 +30。',nEn:'Angle Guidance',eEn:'Side-panel angles bring shape back to centre. Coverage +30.'},
+         {n:'立體定位',e:'立體罩杯維持位置，衣服線條自然不塌。',nEn:'3D Positioning',eEn:'A shaped cup holds position so clothing lines stay clean.'}],
+ stats:{support:82,wrap:92,soft:66,veil:60,chill:58,anchor:80},
+ gear:['5588','S66-3','S66'], cat:'push',
+ art:{hair:'sideBraid', hairC:'#33162c', hairC2:'#6b3055', skin:'#e5b58f', bg1:'#33162c', bg2:'#140811',
+      accent:'#cf8fa0', glow:'#f0aebd', bra:'sideSupport', acc:'feather', pat:'converge'}
+},
+{
+ key:'everyday', code:'ED', tier:'R', ele:'soft', fit:'',
+ zh:'日常・舒壓派', en:'Everyday Ease',
+ typeZh:'舒適 × 每天都能穿', typeEn:'Comfort × Everyday',
+ world:'日常舒適站', worldEn:'Everyday Station',
+ scene:'沒有活動、沒有場合，只有星期二早上八點。她專門守著這種時間。',
+ sceneEn:'No occasion, no event—just eight o’clock on a Tuesday. That is the hour she guards.',
+ foe:'將就慣', foeEn:'Settle Habit',
+ lore:'很多人把最舒服的內衣留到「重要的日子」，然後每天都穿著將就的那件。她想改掉這件事。',
+ loreEn:'Most people save the comfortable one for important days and settle the rest of the year. She would like that habit to end.',
+ quote:'每天穿得住，才是真的好穿。', quoteEn:'If you can wear it daily, it works.',
+ skills:[{n:'零負擔日常',e:'低壓貼合，穿一整天不需要一直注意它。',nEn:'Zero-Fuss Daily',eEn:'Low-pressure fit you never have to think about.'},
+         {n:'耐洗結構',e:'反覆洗滌後版型不變形，日常替換好搭配。',nEn:'Wash-Proof Build',eEn:'Holds its shape through repeated washing.'}],
+ stats:{support:70,wrap:72,soft:92,veil:74,chill:76,anchor:70},
+ gear:['1103','8878','X11'], cat:'wire',
+ art:{hair:'casualBob', hairC:'#3f3128', hairC2:'#71594a', skin:'#e0b489', bg1:'#2b2426', bg2:'#12100f',
+      accent:'#d9c4a8', glow:'#f3e3cd', bra:'everyday', acc:'ribbon', pat:'grid'}
+},
+{
+ key:'fitting', code:'KG', tier:'SSR', ele:'guard', fit:'',
+ zh:'凱莉・試穿顧問', en:'Kelly Fit Consultant',
+ typeZh:'尺寸確認 × 門市／LINE', typeEn:'Fit check × In-store / LINE',
+ world:'凱莉試穿研究室', worldEn:'Kelly Fitting Lab',
+ scene:'高雄苓雅永樂街的那間房。牆上掛滿量尺，桌上永遠有一杯還沒喝完的水。',
+ sceneEn:'A room on Yongle Street, Kaohsiung. Measuring tapes on every wall, one glass of water never finished.',
+ foe:'猜尺寸', foeEn:'Guesswork',
+ lore:'有些狀況不是一張表能解決的：同時壓胸又空杯、下圍鬆但罩杯緊、左右差異明顯。這時候最快的路不是再買一件，是找人一起確認。',
+ loreEn:'Some cases a chart cannot settle: compression and gapping at once, a loose band with a tight cup, clear asymmetry. The fastest route is not another purchase—it is checking with a person.',
+ quote:'不確定，就讓真人一起確認。', quoteEn:'When unsure, fit it with a person.',
+ skills:[{n:'三動作驗證',e:'抬手、彎腰、深呼吸——三個動作判斷是否真的合身。',nEn:'Three-Move Check',eEn:'Raise arms, bend, breathe deep—three moves reveal a true fit.'},
+         {n:'跨版型調度',e:'同時出現多種困擾時，重新排序該先解決哪一個。',nEn:'Cross-Fit Triage',eEn:'When several problems appear at once, she reorders which to solve first.'}],
+ stats:{support:86,wrap:86,soft:80,veil:70,chill:70,anchor:88},
+ gear:['S66','1103','8878'], cat:'plus',
+ art:{hair:'updo', hairC:'#2f2118', hairC2:'#5e4430', skin:'#eec6a4', bg1:'#2a1f18', bg2:'#120d0a',
+      accent:'#e6c88c', glow:'#ffe6b8', bra:'guide', acc:'tape', pat:'tick'}
+},
+{
+ key:'goddess', code:'KL', tier:'UR', ele:'all', fit:'', hidden:true,
+ zh:'金曦・凱莉女神', en:'Aurelia, the Kelly Muse',
+ typeZh:'全屬性 × 限定', typeEn:'All attributes × Limited',
+ world:'晨光穹頂', worldEn:'Dawnlight Dome',
+ scene:'只有在連續回來七天，或整個社群一起擊倒跑杯怪之後，穹頂才會打開。',
+ sceneEn:'The dome opens only after seven days of returning—or after the whole community brings the Slip Monster down.',
+ foe:'所有穿錯的日子', foeEn:'Every ill-fitting day',
+ lore:'她不是第十三種版型，而是前面十二位一起成立時的樣子：杯容夠、下圍穩、脇邊收、肩帶鬆、材質涼、外表看不見。',
+ loreEn:'She is not a thirteenth fit. She is what it looks like when all twelve hold at once: enough volume, a level band, contained sides, relaxed straps, cool fabric, and nothing visible.',
+ quote:'全部到位的那一天，妳會忘記自己穿著內衣。', quoteEn:'On the day it all aligns, you forget you are wearing one.',
+ skills:[{n:'全屬性共鳴',e:'六項屬性同時 +20，戰隊中的所有隊員獲得加成。',nEn:'Full Resonance',eEn:'All six attributes +20 and every squad member gains a bonus.'},
+         {n:'晨光降臨',e:'限定活動期間，分享卡自動套用金曦特效框。',nEn:'Dawnfall',eEn:'During the event, share cards gain the gilded frame.'}],
+ stats:{support:96,wrap:96,soft:94,veil:94,chill:92,anchor:96},
+ gear:['S66','5588','1103'], cat:'plus',
+ art:{hair:'goddessFlow', hairC:'#7a4a2c', hairC2:'#e6b878', skin:'#f6d6ba', bg1:'#3a1030', bg2:'#170718',
+      accent:'#ffd9e6', glow:'#ffe9c9', bra:'goddess', acc:'halo', pat:'radiant'}
+}
+];
+const ROLE = k => ROLES.find(r => r.key === k);
+const POOL = ROLES.filter(r => !r.hidden);
+
+/* ═══════════ 測驗（沿用凱莉愛 A–E 邏輯） ═══════════ */
+const QUIZ = {
+zh:[
+ ['妳穿內衣時，最困擾的是哪一種狀況？',[
+  ['壓胸、溢杯','罩杯上緣切胸，容易從上方或側邊擠出來',{support:4,wrap:1},'A'],
+  ['空杯、浮杯','罩杯上緣不貼，彎腰或活動時出現空隙',{soft:3,veil:1},'B'],
+  ['外擴、不集中','胸型往兩側散，穿衣線條不明顯',{wrap:3,anchor:2},'C'],
+  ['副乳、側邊溢肉','脇邊包不住，手臂旁有明顯肉感',{wrap:4,support:1},'D']]],
+ ['如果只能先改善一件事？',[
+  ['胸側更完整包覆','想要高脇與側片支撐',{wrap:4},'D'],
+  ['下圍不要往上跑','想要更穩定的底盤',{anchor:4},'E'],
+  ['肩帶不要勒','想要分散肩膀壓力',{soft:3,support:2},'E'],
+  ['罩杯不要壓胸','想要足夠杯容與杯深',{support:4},'A']]],
+ ['妳平常比較喜歡哪一種穿感？',[
+  ['柔軟無鋼圈','日常久穿最重要',{soft:4},''],
+  ['軟鋼圈穩托','集中與舒適都要',{anchor:3,wrap:1},'C'],
+  ['機能包覆','穩定感優先',{wrap:3,anchor:2},'D'],
+  ['輕薄無痕','貼身衣服也要俐落',{veil:4},'']]],
+ ['天氣熱的時候，妳最在意什麼？',[
+  ['透氣不悶','材質要輕爽',{chill:4,soft:1},''],
+  ['支撐不能掉','再熱也要穩',{anchor:3,support:1},'E'],
+  ['側邊還是要包','不想因為薄就跑位',{wrap:3},'D'],
+  ['衣服不要看到痕跡','薄上衣更重要',{veil:4},'']]],
+ ['穿一整天之後，妳最希望？',[
+  ['完全不用調肩帶','肩帶分壓舒服',{soft:3,support:2},'E'],
+  ['下圍還在原位','動一整天也穩',{anchor:4},'E'],
+  ['胸側還是收得住','高脇包覆不亂跑',{wrap:4},'D'],
+  ['衣服表面乾乾淨淨','不顯內衣線',{veil:4},'']]],
+ ['最後，妳想要的內衣比較像？',[
+  ['穩穩接住我','重視深杯、高脇、下圍',{support:3,wrap:2,anchor:2},'A'],
+  ['舒服陪我一整天','重視柔軟與低壓',{soft:4},''],
+  ['藏在衣服裡','重視無痕與輕薄',{veil:4},''],
+  ['夏天也想穿得住','重視涼感與透氣',{chill:4,soft:1},'']]]
+],
+en:[
+ ['What bothers you most when wearing a bra?',[
+  ['Overflow / compression','The top edge cuts in',{support:4,wrap:1},'A'],
+  ['Gapping','The cup loses contact when you move',{soft:3,veil:1},'B'],
+  ['Spreading outward','Shape looks less centred',{wrap:3,anchor:2},'C'],
+  ['Side tissue escapes','The side panel cannot contain it',{wrap:4,support:1},'D']]],
+ ['If you could fix one thing first?',[
+  ['Fuller side coverage','High sides and side support',{wrap:4},'D'],
+  ['A band that stays level','A more stable base',{anchor:4},'E'],
+  ['Less strap pressure','Spread the load',{soft:3,support:2},'E'],
+  ['More cup volume','Stop the compression',{support:4},'A']]],
+ ['Which feel do you usually prefer?',[
+  ['Soft wireless','Daily long wear comes first',{soft:4},''],
+  ['Soft underwire','Support and comfort together',{anchor:3,wrap:1},'C'],
+  ['Functional coverage','Stability first',{wrap:3,anchor:2},'D'],
+  ['Light seamless','Clean under fitted clothes',{veil:4},'']]],
+ ['In hot weather, what matters most?',[
+  ['Breathable and cool','Light, fresh fabric',{chill:4,soft:1},''],
+  ['Support must not fade','Stable even in heat',{anchor:3,support:1},'E'],
+  ['Sides still contained','Thin but still secure',{wrap:3},'D'],
+  ['No visible lines','Important under thin tops',{veil:4},'']]],
+ ['After a full day, you want…',[
+  ['No strap readjusting','Comfortable load spread',{soft:3,support:2},'E'],
+  ['The band still in place','Stable through movement',{anchor:4},'E'],
+  ['Sides still held','High-side coverage stays put',{wrap:4},'D'],
+  ['A clean outer line','No bra showing',{veil:4},'']]],
+ ['Your ideal bra is more like…',[
+  ['Hold me steadily','Deep cup, high side, stable band',{support:3,wrap:2,anchor:2},'A'],
+  ['Stay comfortable all day','Soft and low pressure',{soft:4},''],
+  ['Disappear under clothes','Light and seamless',{veil:4},''],
+  ['Survive summer with me','Cooling and breathable',{chill:4,soft:1},'']]]
+]};
+const TOP_ROLE = {support:'deep',wrap:'highside',anchor:'band',soft:'wireless',veil:'seamless',chill:'cooling'};
+
+/* ═══════════ 羈絆組合 ═══════════ */
+const BONDS = [
+ {a:'support',b:'anchor',n:'鋼骨同盟',nEn:'Steel Alliance',d:'杯容與底盤同時到位，肩膀當天就有感覺。',dEn:'Volume and base align—the shoulders feel it the same day.'},
+ {a:'support',b:'wrap',n:'深杯防線',nEn:'Deep Frontier',d:'先給空間再收side，副乳與溢杯一次處理。',dEn:'Space first, containment second—overflow and side tissue solved together.'},
+ {a:'soft',b:'veil',n:'無感結界',nEn:'Weightless Veil',d:'柔軟加上隱形，白 T 底下什麼都不用擔心。',dEn:'Softness plus invisibility—nothing to worry about under a white tee.'},
+ {a:'chill',b:'wrap',n:'夏日防線',nEn:'Summer Line',d:'薄了也不鬆，台灣七月的標準配置。',dEn:'Thin but never loose—the standard build for a Taiwanese July.'},
+ {a:'soft',b:'anchor',n:'柔穩並存',nEn:'Soft Anchor',d:'不用鋼圈也能穩，證明兩者不必二選一。',dEn:'Stable without wire—proof you never had to choose.'},
+ {a:'veil',b:'anchor',n:'隱形底盤',nEn:'Invisible Base',d:'看不見的支撐，最難做也最耐穿。',dEn:'Support you cannot see is the hardest to build and the longest to last.'},
+ {a:'chill',b:'soft',n:'微風日常',nEn:'Breeze Routine',d:'夏天最容易被留在洗衣籃外面的那一件。',dEn:'The one that never makes it back into the laundry basket in summer.'},
+ {a:'support',b:'veil',n:'撐得住也藏得住',nEn:'Held and Hidden',d:'大罩杯也能穿貼身衣服，不用退讓。',dEn:'A full cup under fitted clothing—no compromise needed.'},
+ {a:'wrap',b:'anchor',n:'穩收雙軌',nEn:'Twin Rails',d:'側收與下圍互相咬合，一整天不用重新拉。',dEn:'Side containment locks with the band—no resetting all day.'},
+ {a:'chill',b:'anchor',n:'冷靜底盤',nEn:'Cool Base',d:'流汗也不鬆，運動與通勤都撐得住。',dEn:'Holds through sweat—commute or workout.'},
+ {a:'chill',b:'veil',n:'透明微風',nEn:'Clear Breeze',d:'又薄又涼又看不見，夏天的三個願望。',dEn:'Thin, cool, invisible—three summer wishes at once.'},
+ {a:'soft',b:'wrap',n:'柔性包覆',nEn:'Gentle Hold',d:'不靠壓力也能收得住，久穿不留痕。',dEn:'Containment without pressure, and no marks after hours.'},
+ {a:'support',b:'soft',n:'有力的溫柔',nEn:'Gentle Strength',d:'支撐感很明確，但摸起來完全不硬。',dEn:'Unmistakable support that never feels rigid.'},
+ {a:'support',b:'chill',n:'夏日承托',nEn:'Summer Lift',d:'大罩杯的夏天解法，薄卻不塌。',dEn:'The full-cup answer to summer: thin without collapsing.'},
+ {a:'wrap',b:'veil',n:'無痕收邊',nEn:'Seamless Edge',d:'包得住又不顯線，最難兼顧的一組。',dEn:'Contained yet invisible—the hardest pair to satisfy.'},
+ {a:'veil',b:'soft',n:'無感結界',nEn:'Weightless Veil',d:'柔軟加上隱形，白 T 底下什麼都不用擔心。',dEn:'Softness plus invisibility.'}
+];
+const SQUAD_NAMES = {
+ support:['承托同盟','Lift Alliance'], wrap:['包覆軍團','Coverage Legion'],
+ soft:['柔感結社','Soft Society'],   veil:['隱形部隊','Invisible Unit'],
+ chill:['微風艦隊','Breeze Fleet'],   anchor:['安定議會','Anchor Council'],
+ guard:['凱莉護衛隊','Kelly Guard'],  all:['晨光聯盟','Dawnlight Union']
+};
+
+/* ═══════════ 任務 ═══════════ */
+const MISSIONS = [
+ {k:'quiz',    n:'完成 6 題測驗',   nEn:'Finish the 6-question quiz', r:'召喚券 ×1', dmg:6},
+ {k:'share',   n:'做一張分享卡',     nEn:'Create a share card',        r:'召喚券 ×1', dmg:5},
+ {k:'friend',  n:'邀請 1 位好友完成', nEn:'One friend completes',       r:'召喚券 ×2', dmg:12},
+ {k:'checkin', n:'今日簽到',         nEn:'Check in today',             r:'鑰匙 ×1',   dmg:4},
+ {k:'guide',   n:'看完尺寸指南',      nEn:'Read the size guide',        r:'召喚券 ×1', dmg:5, url:'https://www.kellylove.tw/page/bra-size-guide'},
+ {k:'store',   n:'查看門市試穿資訊',  nEn:'View in-store fitting',      r:'鑰匙 ×1',   dmg:5, url:'https://www.kellylove.tw/page/in-store-fitting'},
+ {k:'fuse',    n:'合成一張戰隊卡',    nEn:'Fuse a squad card',          r:'召喚券 ×1', dmg:8}
+];
+
+/* ═══════════ UI 文案 ═══════════ */
+const T = {
+zh:{
+ easyChip:'大字', meChip:'我的',
+ heroT:'妳的內衣<br>其實有<em>名字</em>。',
+ heroD:'12 位角色，就是凱莉愛的 12 種版型答案：深杯、高脇、無鋼圈、軟鋼圈、無痕、涼感、寬肩分壓、穩定下圍。6 題測出妳的本命角色，收集、召喚、組戰隊、邀好友解鎖限定。',
+ ctaStart:'開始 6 題測驗', ctaDex:'先看 12 位角色',
+ t1:'不用填罩杯尺寸', t2:'分享卡不顯示 size', t3:'角色直接連到真商品', t4:'18–99 歲都看得懂',
+ howK:'HOW IT WORKS', howT:'為什麼要玩，而不是只做測驗',
+ how1t:'① 測出角色', how1d:'6 題只問實際穿著困擾，直接對應凱莉愛 A–E 版型結論。',
+ how2t:'② 收集與召喚', how2d:'12 角色＋隱藏限定。SSR 召喚有完整運鏡，抽到會想截圖。',
+ how3t:'③ 好友碰撞', how3d:'兩張卡撞出羈絆技，好友完成測驗就開寶箱。',
+ how4t:'④ 回到選內衣', how4d:'每張角色卡最後都給 3 個真商品連結、LINE 顧問與門市試穿。',
+ quizT:'6 題，找出妳最缺的那一種版型力量',
+ quizD:'題目沿用凱莉愛「10 秒胸型測驗」的 A–E 困擾邏輯，再補上舒適、無痕、涼感偏好。結果不會說妳是哪種胸型，只告訴妳該找什麼結構。',
+ quizHint:'沒有標準答案，選最常發生的那一項就好。',
+ qb1:'約 40 秒', qb2:'不需註冊', qb3:'不問尺寸',
+ ctaBegin:'開始', ctaSize:'先看尺寸指南', ctaBack:'上一題',
+ anaT:'正在生成妳的凱莉愛角色', anaD:'杯容 × 高脇 × 下圍 × 肩帶 × 舒適 × 無痕',
+ resK:'YOUR ROLE', resT:'妳的角色卡誕生了',
+ ctaShare:'做分享卡', ctaRetake:'重測',
+ attrK:'妳目前最需要的 6 種力量', gearK:'先看這 3 款',
+ gearD:'縮小選擇範圍的第一步；實際適配仍以商品頁尺寸表或 LINE 顧問確認為準。',
+ ctaLine:'LINE 尺寸諮詢', ctaStore:'高雄門市試穿',
+ shareT:'做一張可以直接曬的 1080×1920',
+ shareD:'卡面不放罩杯尺寸，只放角色、BRA CODE、版型需求與邀請碼。好友從妳的連結完成測驗，就會進妳的戰隊。',
+ ctaDownload:'下載分享卡', ctaSysShare:'系統分享', ctaCopy:'複製邀請連結',
+ shareNote:'每個連結都帶 referral_id。好友完成測驗後，後端會回寫妳的戰隊、圖鑑、寶箱與獎勵進度——前端只負責演出，發獎一律由後端判定，避免刷單。',
+ dexT:'12 位角色 ＝ 12 種選內衣的方向',
+ dexD:'每張卡都綁定版型關鍵字、專屬世界觀、兩個技能，以及凱莉愛的真實商品。點開任一張看完整設定。',
+ fAll:'全部', fOwn:'已解鎖',
+ gachaT:'召喚儀式',
+ gachaD:'SSR 代表卡片稀有度，不代表胸型比較好。每一位角色都對應真實版型需求，抽到誰都能拿去選內衣。',
+ ticketK:'召喚券', ticketU:'張', ticketD:'完成測驗、每日簽到、分享、好友完成測驗都會拿到召喚券。',
+ ctaDraw1:'單抽', ctaDraw10:'十連（保底 SSR）', rateK:'機率公開',
+ keyK:'鑰匙', keyD:'把。重複的角色會轉成鑰匙；集滿 10 把可以指定解鎖一位角色。', ctaExchange:'用 10 把鑰匙指定解鎖',
+ rateUR:'限定 UR', rateURd:'不在卡池：7 日簽到或擊敗 Boss 取得',
+ chestK:'好友寶箱', chestT:'3 位好友完成測驗 → 金色寶箱',
+ chestD:'位好友已完成。好友必須真的做完測驗才算有效邀請。',
+ ctaChest:'開啟寶箱', ctaSim:'模擬好友完成',
+ recentK:'最近召喚', recentE:'還沒有召喚紀錄。抽第一張看看。',
+ squadT:'好友卡碰撞 → 戰隊合成卡',
+ squadD:'兩張角色卡對撞會產生「羈絆技」；選 3–5 位組隊則能合成一張專屬戰隊卡，稀有度由屬性總和決定。',
+ collideK:'卡片碰撞', ctaCollide:'開始碰撞', ctaShuffle:'換一組',
+ fuseK:'戰隊合成', fuseT:'選 3–5 位隊員', ctaFuse:'合成戰隊卡', ctaClear:'清空', fusedK:'妳的戰隊',
+ dailyT:'每天回來，不用一直送折價券',
+ dailyD:'簽到累積連續天數換召喚券與鑰匙；購物金只放在高價值節點，避免把毛利燒光。',
+ streakD:'連續 7 天可取得隱藏限定角色。中斷會從第 1 天重來。', ctaCheckin:'今日簽到',
+ bossK:'限時活動', bossT:'跑杯怪來襲',
+ bossD:'全站玩家一起打。完成測驗、分享、邀好友、看尺寸指南、到門市試穿都會扣血。',
+ ctaAttack:'出擊', bossR:'擊敗後，全體參與者解鎖 24 小時限定任務與隱藏角色。',
+ missK:'任務',
+ navHome:'首頁', navQuiz:'測驗', navDex:'圖鑑', navGacha:'召喚', navDaily:'每日',
+ tabWorld:'世界觀', tabSkill:'技能', tabStat:'屬性', tabGear:'裝備',
+ ctaMakeShare:'做成分享卡', ctaSkip:'跳過', ctaAgain:'再抽一次', ctaDetail:'看角色設定', ctaDone:'收下',
+ meT:'保存角色與進度', meD:'綁定後，角色圖鑑、戰隊、簽到與邀請獎勵會寫回 CRM，換裝置也不會消失。',
+ ctaLineLogin:'使用 LINE 登入', emailK:'或用 Email', ctaOtp:'寄送驗證碼', ctaVerify:'驗證並登入',
+ stateK:'目前狀態', ctaSync:'同步 CRM', ctaReset:'重置進度',
+ meNote:'尚未填入 LIFF ID 與 API 網域時，會以 Demo 身份在本機執行，所有獎勵僅供演出。'
+},
+en:{
+ easyChip:'Large', meChip:'Me',
+ heroT:'Your bra<br>already has a <em>name</em>.',
+ heroD:'Twelve roles are twelve Kelly Love fit answers: deep cup, high side, wireless, soft underwire, seamless, cooling, wide-strap relief and a stable band. Six questions find yours—then collect, summon, build a squad and unlock the limited one.',
+ ctaStart:'Start the 6-question quiz', ctaDex:'See the 12 roles first',
+ t1:'No cup size asked', t2:'Share cards hide size', t3:'Roles link to real products', t4:'Readable at any age',
+ howK:'HOW IT WORKS', howT:'Why play instead of just taking a quiz',
+ how1t:'① Find your role', how1d:'Six questions about real wear problems, mapped to Kelly Love’s A–E results.',
+ how2t:'② Collect & summon', how2d:'Twelve roles plus a hidden limited one, with a full cinematic SSR reveal.',
+ how3t:'③ Friend collision', how3d:'Two cards collide into a bond skill; three friends open the chest.',
+ how4t:'④ Back to choosing', how4d:'Every card ends with three real products, LINE support and in-store fitting.',
+ quizT:'Six questions to find the fit force you lack',
+ quizD:'The quiz keeps Kelly Love’s A–E wear-problem logic and adds comfort, seamless and cooling preferences. It tells you what construction to look for, not what body type you are.',
+ quizHint:'No right answer. Pick what happens most often.',
+ qb1:'About 40 seconds', qb2:'No signup', qb3:'No size asked',
+ ctaBegin:'Start', ctaSize:'Open size guide', ctaBack:'Previous',
+ anaT:'Generating your Kelly Love role', anaD:'Volume × High side × Band × Straps × Comfort × Seamless',
+ resK:'YOUR ROLE', resT:'Your role card is born',
+ ctaShare:'Make share card', ctaRetake:'Retake',
+ attrK:'The six forces you need most', gearK:'Start with these three',
+ gearD:'A first step to narrow the field. Confirm actual fit on the product page or with a LINE consultant.',
+ ctaLine:'LINE fit consultation', ctaStore:'Kaohsiung store fitting',
+ shareT:'A 1080×1920 card worth posting',
+ shareD:'No cup size on the card—only the role, BRA CODE, fit needs and your invite code. Friends who finish from your link join your squad.',
+ ctaDownload:'Download card', ctaSysShare:'System share', ctaCopy:'Copy invite link',
+ shareNote:'Every link carries a referral_id. When a friend finishes, the backend updates your squad, collection, chest and rewards. The frontend only plays the animation—rewards are always issued server-side.',
+ dexT:'12 roles = 12 ways to choose a bra',
+ dexD:'Each card carries fit keywords, its own world, two skills and real Kelly Love products. Open any card for the full profile.',
+ fAll:'All', fOwn:'Unlocked',
+ gachaT:'Summon ritual',
+ gachaD:'SSR is card rarity, not a better body. Every role maps to a real fit need, so any pull is useful.',
+ ticketK:'Summon tickets', ticketU:'left', ticketD:'Earned from the quiz, daily check-ins, sharing and friends completing.',
+ ctaDraw1:'Single pull', ctaDraw10:'10-pull (SSR guaranteed)', rateK:'Published rates',
+ keyK:'Keys', keyD:'keys. Duplicates become keys; 10 keys unlock any role you choose.', ctaExchange:'Spend 10 keys to pick a role',
+ rateUR:'Limited UR', rateURd:'Not in the pool: 7-day streak or defeating the boss',
+ chestK:'Friend chest', chestT:'3 friends finish → golden chest',
+ chestD:'friends completed. A friend counts only after finishing the quiz.',
+ ctaChest:'Open chest', ctaSim:'Simulate friend',
+ recentK:'Recent summons', recentE:'No summons yet. Try your first pull.',
+ squadT:'Card collision → squad fusion',
+ squadD:'Two cards collide into a bond skill. Pick 3–5 roles to fuse a squad card; rarity comes from total attributes.',
+ collideK:'Card collision', ctaCollide:'Start collision', ctaShuffle:'Shuffle',
+ fuseK:'Squad fusion', fuseT:'Pick 3–5 members', ctaFuse:'Fuse squad card', ctaClear:'Clear', fusedK:'Your squad',
+ dailyT:'Come back daily without endless coupons',
+ dailyD:'Streaks pay in tickets and keys. Store credit is reserved for high-value milestones.',
+ streakD:'Seven days in a row unlocks the hidden limited role. Breaking the streak resets to day 1.', ctaCheckin:'Check in',
+ bossK:'Limited event', bossT:'Slip Monster raid',
+ bossD:'The whole community attacks together. Quiz, share, referral, size guide and store visits all deal damage.',
+ ctaAttack:'Attack', bossR:'On defeat, everyone unlocks a 24-hour mission bonus and the hidden role.',
+ missK:'Missions',
+ navHome:'Home', navQuiz:'Quiz', navDex:'Dex', navGacha:'Summon', navDaily:'Daily',
+ tabWorld:'World', tabSkill:'Skills', tabStat:'Stats', tabGear:'Gear',
+ ctaMakeShare:'Make share card', ctaSkip:'Skip', ctaAgain:'Pull again', ctaDetail:'View profile', ctaDone:'Keep',
+ meT:'Save your roles and progress', meD:'Once linked, your collection, squad, streak and referral rewards sync to CRM across devices.',
+ ctaLineLogin:'Continue with LINE', emailK:'Or use email', ctaOtp:'Send code', ctaVerify:'Verify & sign in',
+ stateK:'Current state', ctaSync:'Sync CRM', ctaReset:'Reset progress',
+ meNote:'Without a LIFF ID and API domain, the app runs as a local demo identity and all rewards are illustrative.'
+}};
+/* ══════════════════════════════════════════════════════════════
+   角色視覺引擎 — 全程程式繪製 SVG，無外部圖檔
+   ══════════════════════════════════════════════════════════════ */
+const W = 600, H = 860;
+
+/* 固定亂數：同一角色永遠長一樣 */
+function rng(seed){
+  let h = 2166136261;
+  for (let i=0;i<seed.length;i++){ h ^= seed.charCodeAt(i); h = Math.imul(h,16777619) }
+  let a = h>>>0;
+  return () => { a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a>>>15, 1|a); t = t + Math.imul(t ^ t>>>7, 61|t) ^ t;
+    return ((t ^ t>>>14)>>>0)/4294967296 };
+}
+const n2 = v => Math.round(v*10)/10;
+
+/* Catmull-Rom → 平滑路徑 */
+function smooth(pts, close){
+  if (pts.length < 2) return '';
+  const p = close ? [pts[pts.length-1],...pts,pts[0],pts[1]] : [pts[0],...pts,pts[pts.length-1]];
+  let d = `M ${n2(pts[0][0])} ${n2(pts[0][1])}`;
+  for (let i=1;i<p.length-2;i++){
+    const [x0,y0]=p[i-1],[x1,y1]=p[i],[x2,y2]=p[i+1],[x3,y3]=p[i+2];
+    d += ` C ${n2(x1+(x2-x0)/6)} ${n2(y1+(y2-y0)/6)}, ${n2(x2-(x3-x1)/6)} ${n2(y2-(y3-y1)/6)}, ${n2(x2)} ${n2(y2)}`;
+  }
+  return d + (close ? ' Z' : '');
+}
+/* 蕾絲扇貝邊 */
+function scallop(x1,y1,x2,y2,n,amp){
+  let d = `M ${n2(x1)} ${n2(y1)}`;
+  for (let i=1;i<=n;i++){
+    const t0=(i-1)/n, t1=i/n;
+    const ax=x1+(x2-x1)*t0, ay=y1+(y2-y1)*t0;
+    const bx=x1+(x2-x1)*t1, by=y1+(y2-y1)*t1;
+    const mx=(ax+bx)/2, my=(ay+by)/2;
+    const dx=bx-ax, dy=by-ay, L=Math.hypot(dx,dy)||1;
+    d += ` Q ${n2(mx - dy/L*amp)} ${n2(my + dx/L*amp)} ${n2(bx)} ${n2(by)}`;
+  }
+  return d;
+}
+const star = (x,y,r) =>
+  `M ${n2(x)} ${n2(y-r)} Q ${n2(x)} ${n2(y)} ${n2(x+r)} ${n2(y)} Q ${n2(x)} ${n2(y)} ${n2(x)} ${n2(y+r)} Q ${n2(x)} ${n2(y)} ${n2(x-r)} ${n2(y)} Q ${n2(x)} ${n2(y)} ${n2(x)} ${n2(y-r)} Z`;
+
+/* ── 髮型參數 ── */
+const HAIR = {
+  longWave    :{len:460, w0:88, wMax:120, wEnd:100, amp:15, freq:2.6, fringe:'side'},
+  ponytail    :{len:190, w0:86, wMax:96,  wEnd:70,  amp:4,  freq:1,   fringe:'straight', tail:'right'},
+  cloudCurl   :{len:280, w0:96, wMax:132, wEnd:118, amp:24, freq:4.4, fringe:'curl'},
+  halfBraid   :{len:360, w0:86, wMax:112, wEnd:88,  amp:9,  freq:2,   fringe:'middle', braid:'left'},
+  sleekBob    :{len:225, w0:88, wMax:98,  wEnd:86,  amp:2,  freq:1,   fringe:'straight'},
+  shortWave   :{len:200, w0:90, wMax:110, wEnd:92,  amp:14, freq:3.2, fringe:'side'},
+  longStraight:{len:500, w0:86, wMax:104, wEnd:92,  amp:3,  freq:1.4, fringe:'middle'},
+  bun         :{len:170, w0:84, wMax:92,  wEnd:66,  amp:3,  freq:1,   fringe:'side', bun:1},
+  midWave     :{len:320, w0:90, wMax:116, wEnd:98,  amp:17, freq:2.2, fringe:'side'},
+  sideBraid   :{len:230, w0:86, wMax:100, wEnd:80,  amp:6,  freq:1.6, fringe:'middle', braid:'right'},
+  casualBob   :{len:255, w0:90, wMax:108, wEnd:94,  amp:10, freq:2,   fringe:'curl'},
+  updo        :{len:150, w0:82, wMax:90,  wEnd:64,  amp:2,  freq:1,   fringe:'middle', bun:1},
+  goddessFlow :{len:600, w0:92, wMax:138, wEnd:112, amp:22, freq:2.2, fringe:'middle'}
+};
+function hairBack(style){
+  const h = HAIR[style] || HAIR.longWave;
+  const top = 214, N = 16;
+  const half = t => {
+    const bell = Math.sin(Math.min(1,t*1.6)*Math.PI*.5);
+    const base = h.w0 + (h.wMax-h.w0)*bell + (h.wEnd-h.wMax)*t*t;
+    return base + h.amp*Math.sin(t*Math.PI*h.freq);
+  };
+  const R=[], L=[];
+  for (let i=0;i<=N;i++){
+    const t=i/N, y=top+h.len*t, w=half(t);
+    R.push([300+w,y]); L.push([300-w,y]);
+  }
+  const pts = [[300,top-42], ...R, [300, top+h.len+16], ...L.reverse()];
+  return smooth(pts, true);
+}
+function hairFront(style, c1, c2){
+  const h = HAIR[style] || HAIR.longWave;
+  let d = '';
+  if (h.fringe === 'straight')
+    d = 'M 216 288 C 224 232, 376 232, 384 290 C 356 268, 244 268, 216 288 Z';
+  else if (h.fringe === 'side')
+    d = 'M 214 296 C 220 226, 384 224, 386 282 C 348 250, 286 258, 244 316 C 232 312, 220 306, 214 296 Z';
+  else if (h.fringe === 'middle')
+    d = 'M 214 292 C 222 226, 378 226, 386 292 C 366 254, 322 250, 300 286 C 278 250, 234 254, 214 292 Z';
+  else
+    d = 'M 214 292 C 222 224, 378 224, 386 292 C 372 268, 352 292, 330 268 C 310 292, 288 268, 268 290 C 248 266, 230 288, 214 292 Z';
+  let extra = '';
+  if (h.bun) extra += `<circle cx="300" cy="204" r="46" fill="url(#hairG)"/><path d="${scallop(258,200,342,200,4,7)}" fill="none" stroke="${c2}" stroke-width="3" opacity=".55"/>`;
+  if (h.tail === 'right'){
+    const pts=[[382,268],[440,312],[458,392],[446,478],[418,530],[398,512],[416,452],[418,378],[392,318]];
+    extra += `<path d="${smooth(pts,true)}" fill="url(#hairG)"/>`;
+  }
+  if (h.braid){
+    const dir = h.braid === 'left' ? -1 : 1;
+    for (let i=0;i<7;i++){
+      const y = 320 + i*44, x = 300 + dir*(96 + i*3.5);
+      extra += `<ellipse cx="${n2(x)}" cy="${y}" rx="${n2(23-i*.7)}" ry="17" fill="url(#hairG)" transform="rotate(${dir*(10+i*1.5)} ${n2(x)} ${y})"/>`;
+    }
+  }
+  return `<path d="${d}" fill="url(#hairG)"/>${extra}`;
+}
+
+/* ── 內衣結構 ── */
+function garment(kind, a){
+  const oL=162, iL=290;
+  const K = {
+    deepCup   :{topA:566, gore:598, goreBot:660, sideBot:632, band:26, strap:11, lace:1, side:0, wire:0},
+    highSide  :{topA:558, gore:600, goreBot:660, sideBot:640, band:26, strap:11, lace:1, side:1, wire:0},
+    wireless  :{topA:588, gore:614, goreBot:654, sideBot:626, band:22, strap:13, lace:0, side:0, wire:0, soft:1},
+    softWire  :{topA:572, gore:604, goreBot:658, sideBot:634, band:24, strap:10, lace:1, side:0, wire:1},
+    seamless  :{topA:584, gore:606, goreBot:652, sideBot:626, band:18, strap:8,  lace:0, side:0, wire:0, one:1},
+    cooling   :{topA:584, gore:610, goreBot:652, sideBot:626, band:20, strap:9,  lace:0, side:0, wire:0, vent:1},
+    wideStrap :{topA:572, gore:602, goreBot:658, sideBot:634, band:28, strap:24, lace:0, side:0, wire:0},
+    band      :{topA:576, gore:604, goreBot:656, sideBot:634, band:40, strap:12, lace:0, side:1, wire:0, hooks:1},
+    natural   :{topA:590, gore:614, goreBot:654, sideBot:624, band:20, strap:11, lace:0, side:0, wire:0, soft:1},
+    sideSupport:{topA:566, gore:602, goreBot:660, sideBot:642, band:26, strap:11, lace:1, side:1, wire:1},
+    everyday  :{topA:588, gore:612, goreBot:652, sideBot:624, band:22, strap:12, lace:0, side:0, wire:0, soft:1},
+    guide     :{topA:572, gore:602, goreBot:658, sideBot:634, band:26, strap:12, lace:1, side:1, wire:0},
+    goddess   :{topA:562, gore:596, goreBot:662, sideBot:638, band:30, strap:12, lace:1, side:1, wire:1, gold:1}
+  }[kind] || {topA:576,gore:604,goreBot:656,sideBot:632,band:24,strap:11,lace:0,side:0,wire:0};
+
+  const cup = m => {
+    const s = m<0 ? -1 : 1, cx = x => 300 + s*(x-300);
+    return `M ${n2(cx(oL))} ${K.topA} C ${n2(cx(oL+34))} ${K.topA-18}, ${n2(cx(iL-40))} ${K.gore-22}, ${n2(cx(iL))} ${K.gore}`
+         + ` L ${n2(cx(iL))} ${K.goreBot} C ${n2(cx(iL-24))} ${K.goreBot+24}, ${n2(cx(oL+28))} ${K.sideBot+18}, ${n2(cx(oL))} ${K.sideBot} Z`;
+  };
+  let g = '';
+
+  /* 側片（高脇 / 側收 / 下圍） */
+  if (K.side){
+    [-1,1].forEach(s=>{
+      const x = 300 + s*138;
+      g += `<path d="M ${n2(x)} ${K.topA-6} L ${n2(x + s*26)} ${K.topA+4} L ${n2(x + s*26)} ${K.goreBot+12} L ${n2(x)} ${K.goreBot+4} Z" fill="url(#braDark)" opacity=".9"/>`;
+    });
+  }
+  /* 罩杯 */
+  if (K.one){
+    g += `<path d="M 162 ${K.topA} C 210 ${K.topA-22}, 268 ${K.gore-14}, 300 ${K.gore+4} C 332 ${K.gore-14}, 390 ${K.topA-22}, 438 ${K.topA}
+          C 442 ${K.goreBot}, 400 ${K.sideBot+22}, 300 ${K.sideBot+26} C 200 ${K.sideBot+22}, 158 ${K.goreBot}, 162 ${K.topA} Z" fill="url(#braG)"/>`;
+  } else {
+    g += `<path d="${cup(-1)}" fill="url(#braG)"/><path d="${cup(1)}" fill="url(#braG)"/>`;
+    g += `<path d="M 294 ${K.gore+4} L 306 ${K.gore+4} L 306 ${K.goreBot-2} L 294 ${K.goreBot-2} Z" fill="url(#braDark)" opacity=".85"/>`;
+  }
+  /* 杯面立體線 */
+  if (!K.soft && !K.one)
+    [-1,1].forEach(s=>{
+      const x1=300+s*236, x2=300+s*116;
+      g += `<path d="M ${n2(x1)} ${K.topA+30} C ${n2(300+s*206)} ${K.goreBot-6}, ${n2(300+s*150)} ${K.goreBot-2}, ${n2(x2)} ${K.goreBot-6}" fill="none" stroke="${a.glow}" stroke-width="2" opacity=".38"/>`;
+    });
+  /* 蕾絲上緣 */
+  if (K.lace){
+    g += `<path d="${scallop(166,K.topA+2,296,K.gore+2,7,5)}" fill="none" stroke="${a.glow}" stroke-width="2.6" opacity=".7"/>`;
+    g += `<path d="${scallop(434,K.topA+2,304,K.gore+2,7,-5)}" fill="none" stroke="${a.glow}" stroke-width="2.6" opacity=".7"/>`;
+  }
+  /* 軟鋼圈 */
+  if (K.wire)
+    [-1,1].forEach(s=>{
+      g += `<path d="M ${n2(300+s*138)} ${K.sideBot-4} C ${n2(300+s*128)} ${K.goreBot+22}, ${n2(300+s*40)} ${K.goreBot+22}, ${n2(300+s*10)} ${K.goreBot-2}" fill="none" stroke="${a.glow}" stroke-width="3" opacity=".55" stroke-linecap="round"/>`;
+    });
+  /* 透氣孔 */
+  if (K.vent)
+    for (let i=0;i<16;i++){
+      const s = i<8?-1:1, j=i%8;
+      g += `<circle cx="${n2(300+s*(196-j*17))}" cy="${n2(K.topA+30+(j%3)*17)}" r="3.2" fill="${a.glow}" opacity=".5"/>`;
+    }
+  /* 下圍 */
+  const by = K.goreBot + 2;
+  g += `<path d="M 148 ${by-6} C 220 ${by+22}, 380 ${by+22}, 452 ${by-6} L ${454} ${by-6+K.band} C 380 ${by+22+K.band}, 220 ${by+22+K.band}, 146 ${by-6+K.band} Z" fill="url(#braDark)"/>`;
+  g += `<path d="M 152 ${by-2} C 222 ${by+24}, 378 ${by+24}, 448 ${by-2}" fill="none" stroke="${a.glow}" stroke-width="1.8" opacity=".45"/>`;
+  if (K.hooks)
+    for (let i=0;i<3;i++)
+      g += `<rect x="${168+i*10}" y="${by+K.band-16}" width="5" height="16" rx="2" fill="${a.glow}" opacity=".65"/>`;
+  /* 肩帶 */
+  [-1,1].forEach(s=>{
+    g += `<path d="M ${n2(300+s*118)} ${K.topA+8} L ${n2(300+s*96)} 516" stroke="url(#braDark)" stroke-width="${K.strap}" stroke-linecap="round" fill="none"/>`;
+    if (K.strap>18)
+      g += `<path d="M ${n2(300+s*118)} ${K.topA+8} L ${n2(300+s*96)} 516" stroke="${a.glow}" stroke-width="2" opacity=".45" fill="none"/>`;
+  });
+  if (K.gold){
+    g += `<path d="${scallop(150,by+26,450,by+26,12,4)}" fill="none" stroke="#ffe9c9" stroke-width="2" opacity=".8"/>`;
+    g += `<circle cx="300" cy="${K.gore+22}" r="11" fill="none" stroke="#ffe9c9" stroke-width="2.4" opacity=".9"/>`;
+  }
+  return g;
+}
+
+/* ── 背景圖樣 ── */
+function pattern(kind, c){
+  const o = ' opacity=".16"', st = `fill="none" stroke="${c}" stroke-width="2"${o}`;
+  let s = '';
+  switch(kind){
+    case 'arc':      for(let i=0;i<7;i++) s+=`<circle cx="300" cy="330" r="${120+i*54}" ${st}/>`; break;
+    case 'shield':   for(let i=0;i<9;i++) s+=`<path d="M ${40} ${120+i*82} L 300 ${60+i*82} L 560 ${120+i*82}" ${st}/>`; break;
+    case 'dot':      for(let y=0;y<15;y++) for(let x=0;x<11;x++) s+=`<circle cx="${28+x*55}" cy="${34+y*58}" r="3.4" fill="${c}" opacity=".13"/>`; break;
+    case 'lattice':  for(let i=-8;i<16;i++){ s+=`<path d="M ${i*70} 0 L ${i*70+860} 860" ${st}/><path d="M ${i*70} 860 L ${i*70+860} 0" ${st}/>` } break;
+    case 'wave':     for(let i=0;i<11;i++){ const y=50+i*78; s+=`<path d="M -20 ${y} C 120 ${y-34}, 220 ${y+34}, 320 ${y} C 420 ${y-34}, 520 ${y+34}, 620 ${y}" ${st}/>` } break;
+    case 'ray':      for(let i=0;i<26;i++){ const a=(i/26)*Math.PI*2; s+=`<path d="M 300 330 L ${n2(300+Math.cos(a)*640)} ${n2(330+Math.sin(a)*640)}" ${st}/>` } break;
+    case 'chevron':  for(let i=0;i<11;i++) s+=`<path d="M 30 ${60+i*78} L 300 ${120+i*78} L 570 ${60+i*78}" ${st}/>`; break;
+    case 'band':     for(let i=0;i<12;i++) s+=`<rect x="0" y="${34+i*70}" width="600" height="16" fill="${c}" opacity=".09"/>`; break;
+    case 'petal':    for(let i=0;i<16;i++){ const a=(i/16)*Math.PI*2, x=300+Math.cos(a)*250, y=330+Math.sin(a)*250;
+                       s+=`<ellipse cx="${n2(x)}" cy="${n2(y)}" rx="46" ry="20" transform="rotate(${n2(a*57)} ${n2(x)} ${n2(y)})" ${st}/>` } break;
+    case 'converge': for(let i=0;i<16;i++) s+=`<path d="M ${i*40} 0 C ${i*40} 300, 300 340, 300 340" ${st}/>`; break;
+    case 'grid':     for(let i=0;i<13;i++) s+=`<path d="M 0 ${i*70} H 600" ${st}/>`; for(let i=0;i<10;i++) s+=`<path d="M ${i*66} 0 V 860" ${st}/>`; break;
+    case 'tick':     for(let i=0;i<34;i++) s+=`<path d="M 20 ${i*26} H ${i%5===0?66:44}" ${st}/><path d="M 580 ${i*26} H ${i%5===0?534:556}" ${st}/>`; break;
+    case 'radiant':  for(let i=0;i<40;i++){ const a=(i/40)*Math.PI*2; s+=`<path d="M 300 300 L ${n2(300+Math.cos(a)*700)} ${n2(300+Math.sin(a)*700)}" fill="none" stroke="${c}" stroke-width="${i%2?1:4}" opacity=".13"/>` }
+                     for(let i=0;i<5;i++) s+=`<circle cx="300" cy="300" r="${130+i*70}" ${st}/>`; break;
+  }
+  return s;
+}
+
+/* ── 配件 ── */
+function accessory(kind, a){
+  const g = a.glow, ac = a.accent;
+  switch(kind){
+    case 'crown':  return `<path d="M 238 206 L 258 154 L 282 194 L 300 140 L 318 194 L 342 154 L 362 206 Z" fill="url(#goldG)" stroke="${g}" stroke-width="2"/>
+                           <circle cx="300" cy="152" r="7" fill="${g}"/><circle cx="258" cy="166" r="5" fill="${g}"/><circle cx="342" cy="166" r="5" fill="${g}"/>`;
+    case 'wing':   return [-1,1].map(s=>`<path d="M ${300+s*168} 268 C ${300+s*242} 224, ${300+s*268} 306, ${300+s*206} 356 C ${300+s*214} 300, ${300+s*196} 282, ${300+s*168} 268 Z" fill="${ac}" opacity=".65"/>`).join('');
+    case 'cloud':  return `<g opacity=".5"><ellipse cx="212" cy="240" rx="62" ry="38" fill="${g}"/><ellipse cx="388" cy="248" rx="58" ry="34" fill="${g}"/><ellipse cx="300" cy="196" rx="72" ry="40" fill="${g}"/></g>`;
+    case 'ring':   return `<circle cx="300" cy="290" r="152" fill="none" stroke="${g}" stroke-width="4" opacity=".55"/><circle cx="300" cy="290" r="168" fill="none" stroke="${ac}" stroke-width="1.6" opacity=".45"/>`;
+    case 'veil':   return `<path d="M 196 254 C 196 196, 404 196, 404 254 C 430 400, 424 560, 404 700 L 372 700 C 396 540, 392 400, 372 282 C 330 254, 270 254, 228 282 C 208 400, 204 540, 228 700 L 196 700 C 176 560, 170 400, 196 254 Z" fill="${g}" opacity=".3"/>`;
+    case 'crystal':return [[168,260,30],[430,238,24],[206,470,18],[404,486,22],[300,132,26]].map(([x,y,r])=>
+                     `<path d="M ${x} ${y-r} L ${x+r*.87} ${y-r*.5} L ${x+r*.87} ${y+r*.5} L ${x} ${y+r} L ${x-r*.87} ${y+r*.5} L ${x-r*.87} ${y-r*.5} Z" fill="${g}" opacity=".55" stroke="#fff" stroke-width="1.4"/>`).join('');
+    case 'pauldron':return [-1,1].map(s=>`<path d="M ${300+s*128} 546 C ${300+s*196} 540, ${300+s*212} 610, ${300+s*186} 664 L ${300+s*126} 638 Z" fill="url(#goldG)" opacity=".92" stroke="${g}" stroke-width="2"/>`).join('');
+    case 'anchor': return `<g opacity=".5" stroke="${g}" stroke-width="6" fill="none" stroke-linecap="round"><path d="M 300 150 V 300"/><path d="M 250 196 H 350"/><path d="M 232 254 C 232 320, 368 320, 368 254"/></g><circle cx="300" cy="140" r="16" fill="none" stroke="${g}" stroke-width="6" opacity=".5"/>`;
+    case 'flower': return [[200,266,22],[236,224,16],[400,278,20],[176,330,14]].map(([x,y,r])=>
+                     `<g>${[0,1,2,3,4].map(i=>{const an=i/5*Math.PI*2;return `<ellipse cx="${n2(x+Math.cos(an)*r*.7)}" cy="${n2(y+Math.sin(an)*r*.7)}" rx="${n2(r*.6)}" ry="${n2(r*.42)}" transform="rotate(${n2(an*57)} ${n2(x+Math.cos(an)*r*.7)} ${n2(y+Math.sin(an)*r*.7)})" fill="${g}" opacity=".85"/>`}).join('')}<circle cx="${x}" cy="${y}" r="${n2(r*.34)}" fill="${ac}"/></g>`).join('');
+    case 'feather':return `<path d="M 428 200 C 486 250, 486 372, 428 430 C 408 372, 408 258, 428 200 Z" fill="${g}" opacity=".6"/>
+                           <path d="M 428 208 V 424" stroke="${ac}" stroke-width="2.4" opacity=".8"/>`;
+    case 'ribbon': return `<path d="M 300 214 L 244 182 L 254 236 Z" fill="${ac}"/><path d="M 300 214 L 356 182 L 346 236 Z" fill="${ac}"/><circle cx="300" cy="212" r="13" fill="${g}"/>`;
+    case 'tape':   return `<path d="M 176 540 C 230 460, 250 430, 300 430 C 350 430, 370 460, 424 540" fill="none" stroke="${g}" stroke-width="15" opacity=".85" stroke-linecap="round"/>
+                           ${[...Array(11)].map((_,i)=>`<path d="M ${180+i*24} ${534-Math.abs(i-5)*13} l 4 -11" stroke="${a.bg2}" stroke-width="2.4" opacity=".8"/>`).join('')}
+                           <g fill="none" stroke="${g}" stroke-width="4.5" opacity=".95"><circle cx="256" cy="330" r="34"/><circle cx="344" cy="330" r="34"/><path d="M 290 330 h 20"/><path d="M 222 322 l -26 -10"/><path d="M 378 322 l 26 -10"/></g>`;
+    case 'halo':   return `<circle cx="300" cy="286" r="176" fill="none" stroke="url(#goldG)" stroke-width="8" opacity=".85"/>
+                           <circle cx="300" cy="286" r="196" fill="none" stroke="${g}" stroke-width="2" opacity=".5"/>
+                           <path d="M 232 178 L 254 128 L 278 168 L 300 112 L 322 168 L 346 128 L 368 178 Z" fill="url(#goldG)"/>
+                           ${[...Array(12)].map((_,i)=>{const an=i/12*Math.PI*2;return star(300+Math.cos(an)*212,286+Math.sin(an)*212,9)}).map(d=>`<path d="${d}" fill="#fff" opacity=".8"/>`).join('')}`;
+    default: return '';
+  }
+}
+
+/* ── 主卡面 ── */
+const SVG_IDS = ['bgG','auraG','skinG','hairG','braG','braDark','goldG','plate','soft2','soft','cardClip','sqBg','sqPlate','sqClip'];
+function uniqIds(svg, pfx){
+  for (const n of SVG_IDS)
+    svg = svg.split(`id="${n}"`).join(`id="${pfx}${n}"`).split(`url(#${n})`).join(`url(#${pfx}${n})`);
+  return svg;
+}
+const _svgCache = new Map();
+function cardSVG(r, opt={}){
+  const ck = `${r.key}|${opt.noText?1:0}|${opt.simple?1:0}|${opt.name||''}|${opt.sub||''}`;
+  if (_svgCache.has(ck)) return _svgCache.get(ck);
+  const out = uniqIds(buildCard(r, opt), `k${r.key}${opt.simple?'s':''}${opt.noText?'n':''}-`);
+  if (_svgCache.size > 80) _svgCache.clear();
+  _svgCache.set(ck, out);
+  return out;
+}
+function buildCard(r, opt={}){
+  const a = r.art, R = rng(r.key);
+  const tierC = {UR:'#ffd9e6', SSR:'#e6c88c', SR:'#b294dd', R:'#cbb8be'}[r.tier];
+  const sparks = [...Array(opt.simple?5:18)].map(()=>{
+    const x=R()*600, y=R()*760, s=2.5+R()*6;
+    return `<path d="${star(x,y,s)}" fill="#fff" opacity="${n2(.18+R()*.5)}"/>`;
+  }).join('');
+
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${r.zh}">
+<defs>
+ <radialGradient id="bgG" cx="50%" cy="30%" r="82%"><stop offset="0" stop-color="${a.bg1}"/><stop offset="1" stop-color="${a.bg2}"/></radialGradient>
+ <radialGradient id="auraG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="${a.glow}" stop-opacity=".62"/><stop offset="1" stop-color="${a.glow}" stop-opacity="0"/></radialGradient>
+ <linearGradient id="skinG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a.skin}"/><stop offset="1" stop-color="${a.skin}" stop-opacity=".78"/></linearGradient>
+ <linearGradient id="hairG" x1="0" y1="0" x2="0.3" y2="1"><stop offset="0" stop-color="${a.hairC2}"/><stop offset=".45" stop-color="${a.hairC}"/><stop offset="1" stop-color="${a.hairC2}"/></linearGradient>
+ <linearGradient id="braG" x1="0" y1="0" x2="0.4" y2="1"><stop offset="0" stop-color="${a.glow}"/><stop offset=".5" stop-color="${a.accent}"/><stop offset="1" stop-color="${a.bg1}"/></linearGradient>
+ <linearGradient id="braDark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a.accent}"/><stop offset="1" stop-color="${a.bg1}"/></linearGradient>
+ <linearGradient id="goldG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0cd"/><stop offset=".5" stop-color="#e6c88c"/><stop offset="1" stop-color="#9d7128"/></linearGradient>
+ <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a.bg2}" stop-opacity="0"/><stop offset=".38" stop-color="${a.bg2}" stop-opacity=".82"/><stop offset="1" stop-color="${a.bg2}"/></linearGradient>
+ <filter id="soft" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="26"/></filter>
+ <filter id="soft2" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="7"/></filter>
+ <clipPath id="cardClip"><rect x="0" y="0" width="${W}" height="${H}" rx="26"/></clipPath>
+</defs>
+<g clip-path="url(#cardClip)">
+ <rect width="${W}" height="${H}" fill="url(#bgG)"/>
+ ${opt.simple ? '' : pattern(a.pat, a.accent)}
+ <ellipse cx="300" cy="330" rx="230" ry="250" fill="url(#auraG)" filter="url(#soft)"/>
+ ${a.acc==='ring'||a.acc==='halo'||a.acc==='anchor'||a.acc==='cloud' ? accessory(a.acc,a) : ''}
+ <path d="${hairBack(a.hair)}" fill="url(#hairG)"/>
+ <path d="M 268 380 h 64 v 148 q -32 22 -64 0 Z" fill="url(#skinG)"/>
+ <path d="M 268 470 q 32 30 64 0 v 22 q -32 26 -64 0 Z" fill="${a.bg2}" opacity=".22"/>
+ <path d="M 122 860 C 126 700, 172 562, 250 518 L 350 518 C 428 562, 474 700, 478 860 Z" fill="url(#skinG)"/>
+ <ellipse cx="300" cy="312" rx="79" ry="93" fill="url(#skinG)"/>
+ <ellipse cx="252" cy="336" rx="21" ry="11" fill="${a.accent}" opacity=".3"/>
+ <ellipse cx="348" cy="336" rx="21" ry="11" fill="${a.accent}" opacity=".3"/>
+ <g fill="none" stroke="${a.hairC}" stroke-linecap="round">
+  <path d="M 258 318 q 15 15 30 0" stroke-width="4.2"/>
+  <path d="M 312 318 q 15 15 30 0" stroke-width="4.2"/>
+  <path d="M 256 292 q 16 -8 32 -3" stroke-width="2.6" opacity=".75"/>
+  <path d="M 312 289 q 16 -5 32 3" stroke-width="2.6" opacity=".75"/>
+  <path d="M 288 362 q 12 10 24 0" stroke-width="3.4" opacity=".72"/>
+ </g>
+ ${hairFront(a.hair, a.hairC, a.hairC2)}
+ ${garment(a.bra, a)}
+ ${a.acc==='ring'||a.acc==='halo'||a.acc==='anchor'||a.acc==='cloud' ? '' : accessory(a.acc,a)}
+ <g class="fx">${sparks}</g>
+ <rect x="0" y="592" width="${W}" height="268" fill="url(#plate)"/>
+ ${opt.noText ? '' : `<text x="42" y="716" font-family="Georgia,serif" font-size="30" letter-spacing="8" fill="${tierC}" opacity=".9">${r.code}</text>
+ <path d="M 42 732 H 246" stroke="${tierC}" stroke-width="2" opacity=".55"/>
+ <text x="42" y="782" font-family="'Noto Serif TC',serif" font-weight="900" font-size="42" fill="#fff">${esc(opt.name || r.zh)}</text>
+ <text x="43" y="820" font-family="'Noto Sans TC',sans-serif" font-size="21" fill="${tierC}" opacity=".92">${esc(opt.sub || r.typeZh)}</text>`}
+ <rect x="8" y="8" width="${W-16}" height="${H-16}" rx="20" fill="none" stroke="${tierC}" stroke-width="2" opacity=".55"/>
+ ${opt.simple ? '' : `<rect x="18" y="18" width="${W-36}" height="${H-36}" rx="14" fill="none" stroke="${tierC}" stroke-width="1" opacity=".3"/>`}
+ <path d="M 18 74 V 18 H 74" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M ${W-18} 74 V 18 H ${W-74}" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M 18 ${H-74} V ${H-18} H 74" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M ${W-18} ${H-74} V ${H-18} H ${W-74}" fill="none" stroke="${tierC}" stroke-width="4"/>
+</g></svg>`;
+}
+const esc = s => String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+/* ── 戰隊合成卡 ── */
+function squadSVG(members, name, tier){
+  return uniqIds(buildSquad(members, name, tier), 'sq' + members.map(m=>m.code).join('') + '-');
+}
+function buildSquad(members, name, tier){
+  const cols = members.map(m => m.art.accent);
+  const glow = members[0].art.glow;
+  const tierC = {UR:'#ffd9e6', SSR:'#e6c88c', SR:'#b294dd', R:'#cbb8be'}[tier];
+  const R = rng(name);
+  const crest = members.map((m,i)=>{
+    const an = -Math.PI/2 + (i/members.length)*Math.PI*2;
+    const x = 300 + Math.cos(an)*118, y = 356 + Math.sin(an)*118;
+    return `<g><circle cx="${n2(x)}" cy="${n2(y)}" r="52" fill="${m.art.bg1}" stroke="${m.art.glow}" stroke-width="3"/>
+      <circle cx="${n2(x)}" cy="${n2(y)}" r="30" fill="${m.art.accent}" opacity=".7"/>
+      <text x="${n2(x)}" y="${n2(y+9)}" text-anchor="middle" font-family="Georgia,serif" font-size="24" fill="#fff">${m.code}</text></g>`;
+  }).join('');
+  const links = members.map((_,i)=>{
+    const a1=-Math.PI/2+(i/members.length)*Math.PI*2, a2=-Math.PI/2+((i+1)%members.length/members.length)*Math.PI*2;
+    return `<path d="M ${n2(300+Math.cos(a1)*118)} ${n2(356+Math.sin(a1)*118)} L ${n2(300+Math.cos(a2)*118)} ${n2(356+Math.sin(a2)*118)}" stroke="${tierC}" stroke-width="2" opacity=".5"/>`;
+  }).join('');
+  const sp = [...Array(26)].map(()=>`<path d="${star(R()*600,R()*760,2+R()*6)}" fill="#fff" opacity="${n2(.2+R()*.5)}"/>`).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(name)}">
+<defs>
+ <radialGradient id="sqBg" cx="50%" cy="38%" r="80%">${cols.map((c,i)=>`<stop offset="${n2(i/Math.max(1,cols.length-1)*.9)}" stop-color="${c}" stop-opacity="${i?0.5:0.85}"/>`).join('')}<stop offset="1" stop-color="#0f0912"/></radialGradient>
+ <linearGradient id="sqPlate" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f0912" stop-opacity="0"/><stop offset="1" stop-color="#0f0912"/></linearGradient>
+ <clipPath id="sqClip"><rect width="${W}" height="${H}" rx="26"/></clipPath>
+</defs>
+<g clip-path="url(#sqClip)">
+ <rect width="${W}" height="${H}" fill="url(#sqBg)"/>
+ ${[...Array(48)].map((_,i)=>{const an=i/48*Math.PI*2;return `<path d="M 300 356 L ${n2(300+Math.cos(an)*700)} ${n2(356+Math.sin(an)*700)}" stroke="${tierC}" stroke-width="${i%3?1:3}" opacity=".1"/>`}).join('')}
+ <circle cx="300" cy="356" r="150" fill="none" stroke="${tierC}" stroke-width="2" opacity=".4"/>
+ <circle cx="300" cy="356" r="190" fill="none" stroke="${tierC}" stroke-width="1" opacity=".25"/>
+ ${links}${crest}
+ <circle cx="300" cy="356" r="46" fill="#0f0912" stroke="${tierC}" stroke-width="3"/>
+ <path d="${star(300,356,30)}" fill="${glow}"/>
+ <g class="fx">${sp}</g>
+ <rect x="0" y="600" width="${W}" height="260" fill="url(#sqPlate)"/>
+ <text x="42" y="718" font-family="Georgia,serif" font-size="26" letter-spacing="8" fill="${tierC}">SQUAD · ${members.length}</text>
+ <path d="M 42 734 H 260" stroke="${tierC}" stroke-width="2" opacity=".55"/>
+ <text x="42" y="784" font-family="'Noto Serif TC',serif" font-weight="900" font-size="42" fill="#fff">${esc(name)}</text>
+ <text x="43" y="820" font-family="'Noto Sans TC',sans-serif" font-size="20" fill="${tierC}" opacity=".9">${members.map(m=>esc(m.zh.split('・')[0])).join(' ／ ')}</text>
+ <rect x="8" y="8" width="${W-16}" height="${H-16}" rx="20" fill="none" stroke="${tierC}" stroke-width="2" opacity=".55"/>
+ <path d="M 18 74 V 18 H 74" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M ${W-18} 74 V 18 H ${W-74}" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M 18 ${H-74} V ${H-18} H 74" fill="none" stroke="${tierC}" stroke-width="4"/>
+ <path d="M ${W-18} ${H-74} V ${H-18} H ${W-74}" fill="none" stroke="${tierC}" stroke-width="4"/>
+</g></svg>`;
+}
+
+/* 卡片外框（含稀有度徽章） */
+function cardHTML(r, opt={}){
+  const t = r.tier;
+  return `<div class="cardframe tier-${t}">
+    <span class="tierbadge ${t}">${t}</span>${opt.isNew?'<span class="newbadge">NEW</span>':''}
+    ${cardSVG(r, opt)}<div class="holo"></div></div>`;
+}
+/* ══════════════════════════════════════════════════════════════
+   應用邏輯
+   ══════════════════════════════════════════════════════════════ */
+const KEY = 'kelly_universe_v5';
+const today = () => new Date().toISOString().slice(0,10);
+const dayDiff = (a,b) => Math.round((new Date(b) - new Date(a)) / 86400000);
+
+const DEFAULT = {
+  v:5, lang:'zh', easy:false, sound:true,
+  q:0, path:[], scores:{support:0,wrap:0,soft:0,veil:0,chill:0,anchor:0}, fitLetter:'',
+  roleKey:'', unlocked:[], fresh:[],
+  tickets:3, keys:0, pity:0,
+  friends:0, chestOpened:false,
+  streak:0, lastCheckin:'', missions:{}, bossHp:82,
+  squad:[], fused:null, recent:[],
+  referral_id:'', refFrom:'', theme:0,
+  user:{member_id:null,line_uid:null,email:null,name:null}, queue:[]
+};
+let S = load();
+
+function load(){
+  try{
+    const raw = store.get(KEY);
+    if (raw){ const o = JSON.parse(raw); if (o && o.v === 5) return Object.assign({}, DEFAULT, o) }
+  }catch(e){}
+  return JSON.parse(JSON.stringify(DEFAULT));
+}
+function save(){ try{ store.set(KEY, JSON.stringify(S)) }catch(e){} }
+
+const tr  = k => (T[S.lang][k] ?? T.zh[k] ?? k);
+const zh  = () => S.lang === 'zh';
+const rn  = r => zh() ? r.zh : r.en;
+const rty = r => zh() ? r.typeZh : r.typeEn;
+const rw  = r => zh() ? r.world : r.worldEn;
+const rq  = r => zh() ? r.quote : r.quoteEn;
+const rl  = r => zh() ? r.lore : r.loreEn;
+const rsc = r => zh() ? r.scene : r.sceneEn;
+const rfo = r => zh() ? r.foe : r.foeEn;
+const has = k => S.unlocked.includes(k);
+
+/* ─────────── 音效 ─────────── */
+let AC = null;
+const ac = () => { if(!AC){ try{ AC = new (window.AudioContext||window.webkitAudioContext)() }catch(e){} } if(AC&&AC.state==='suspended') AC.resume(); return AC };
+function tone(f, d=.12, type='sine', g=.05, when=0){
+  if(!S.sound) return; const c = ac(); if(!c) return;
+  const o = c.createOscillator(), gn = c.createGain(), t = c.currentTime + when;
+  o.type = type; o.frequency.setValueAtTime(f, t);
+  gn.gain.setValueAtTime(0, t); gn.gain.linearRampToValueAtTime(g, t+.012);
+  gn.gain.exponentialRampToValueAtTime(.0001, t+d);
+  o.connect(gn); gn.connect(c.destination); o.start(t); o.stop(t+d+.05);
+}
+function riser(dur=1.1){
+  if(!S.sound) return; const c = ac(); if(!c) return;
+  const o = c.createOscillator(), gn = c.createGain(), t = c.currentTime;
+  o.type = 'sawtooth';
+  o.frequency.setValueAtTime(90, t); o.frequency.exponentialRampToValueAtTime(1400, t+dur);
+  gn.gain.setValueAtTime(.0001, t); gn.gain.linearRampToValueAtTime(.045, t+dur*.8);
+  gn.gain.exponentialRampToValueAtTime(.0001, t+dur+.12);
+  const f = c.createBiquadFilter(); f.type='lowpass'; f.frequency.setValueAtTime(900,t);
+  f.frequency.exponentialRampToValueAtTime(6000,t+dur);
+  o.connect(f); f.connect(gn); gn.connect(c.destination); o.start(t); o.stop(t+dur+.2);
+}
+function impact(){
+  if(!S.sound) return; const c = ac(); if(!c) return;
+  const t = c.currentTime, len = Math.floor(c.sampleRate*.55);
+  const buf = c.createBuffer(1, len, c.sampleRate), d = buf.getChannelData(0);
+  for(let i=0;i<len;i++) d[i] = (Math.random()*2-1) * Math.pow(1-i/len, 3.2);
+  const src = c.createBufferSource(); src.buffer = buf;
+  const gn = c.createGain(); gn.gain.setValueAtTime(.18,t); gn.gain.exponentialRampToValueAtTime(.0001,t+.55);
+  const f = c.createBiquadFilter(); f.type='lowpass'; f.frequency.setValueAtTime(2400,t);
+  src.connect(f); f.connect(gn); gn.connect(c.destination); src.start(t);
+  tone(58,.45,'sine',.14);
+}
+function chime(tier){
+  const base = tier==='UR' ? [659,880,1047,1319] : tier==='SSR' ? [523,659,784,1047] : tier==='SR' ? [494,622,784] : [440,554];
+  base.forEach((f,i)=> tone(f, .8-i*.06, i%2?'triangle':'sine', .05, i*.085));
+}
+
+/* ─────────── 通用 UI ─────────── */
+let toastT;
+function toast(msg){
+  const e = $('#toast'); e.textContent = msg; e.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(()=> e.classList.remove('on'), 2100);
+}
+function applyLang(){
+  document.documentElement.lang = zh() ? 'zh-Hant' : 'en';
+  $$('[data-k]').forEach(el => { const v = tr(el.dataset.k); if (v != null) el.innerHTML = v });
+  $('#langBtn').textContent = zh() ? 'EN' : '中';
+  renderAll();
+}
+function go(v){
+  $$('.view').forEach(s => s.classList.toggle('on', s.id === 'v-'+v));
+  $$('.tab').forEach(b => b.classList.toggle('on', b.dataset.v === v));
+  window.scrollTo({top:0, behavior:'smooth'});
+  if (v === 'dex')   renderDex();
+  if (v === 'squad') renderSquad();
+  if (v === 'daily') renderDaily();
+  if (v === 'gacha') renderGacha();
+}
+
+/* ─────────── 星空背景 ─────────── */
+(function stars(){
+  const c = $('#stars'); if (!c || !c.getContext) return;
+  const x = c.getContext('2d'); let pts = [];
+  function size(){
+    const d = Math.min(devicePixelRatio||1, 2);
+    c.width = innerWidth*d; c.height = innerHeight*d; x.setTransform(d,0,0,d,0,0);
+    pts = [...Array(70)].map(()=>({x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+      r:.5+Math.random()*1.7, a:.15+Math.random()*.6, v:.04+Math.random()*.17, p:Math.random()*6.3}));
+  }
+  function loop(t){
+    x.clearRect(0,0,innerWidth,innerHeight);
+    pts.forEach(p=>{
+      p.y -= p.v; if (p.y < -4){ p.y = innerHeight+4; p.x = Math.random()*innerWidth }
+      x.globalAlpha = p.a * (.55 + .45*Math.sin(t/700 + p.p));
+      x.fillStyle = '#f6dbc9'; x.beginPath(); x.arc(p.x,p.y,p.r,0,6.284); x.fill();
+    });
+    x.globalAlpha = 1; requestAnimationFrame(loop);
+  }
+  size(); requestAnimationFrame(loop); addEventListener('resize', size);
+})();
+
+/* ─────────── 粒子 ─────────── */
+function burst(canvas, count, palette, opt={}){
+  if (!canvas) return;
+  const x = canvas.getContext('2d'), r = canvas.getBoundingClientRect();
+  const d = Math.min(devicePixelRatio||1, 2);
+  canvas.width = r.width*d; canvas.height = r.height*d; x.setTransform(d,0,0,d,0,0);
+  const ox = opt.x ?? r.width/2, oy = opt.y ?? r.height/2, spread = opt.spread ?? 7;
+  const ps = [...Array(count)].map(()=>{
+    const a = Math.random()*6.283, s = Math.random()*spread;
+    return {x:ox, y:oy, vx:Math.cos(a)*s, vy:Math.sin(a)*s - (opt.up||0), a:1,
+            r:1.6+Math.random()*4, c:palette[(Math.random()*palette.length)|0], rot:Math.random()*6.3};
+  });
+  let f = 0;
+  (function loop(){
+    x.clearRect(0,0,r.width,r.height);
+    ps.forEach(p=>{
+      p.x += p.vx; p.y += p.vy; p.vy += .16; p.vx *= .99; p.a *= .975; p.rot += .1;
+      x.globalAlpha = Math.max(0, p.a); x.fillStyle = p.c;
+      x.save(); x.translate(p.x,p.y); x.rotate(p.rot);
+      x.fillRect(-p.r, -p.r*.4, p.r*2, p.r*.8); x.restore();
+    });
+    x.globalAlpha = 1;
+    if (f++ < (opt.frames||120)) requestAnimationFrame(loop); else x.clearRect(0,0,r.width,r.height);
+  })();
+}
+
+/* ═══════════ 測驗 ═══════════ */
+function startQuiz(){
+  S.q = 0; S.path = []; STAT_KEYS.forEach(k => S.scores[k] = 0);
+  $('#quizIntro').classList.add('hidden'); $('#resultBox').classList.add('hidden');
+  $('#quizBox').classList.remove('hidden'); renderQ(); ac();
+}
+function renderQ(){
+  const q = QUIZ[zh()?'zh':'en'][S.q];
+  $('#qCount').textContent = `Q${S.q+1} / 6`;
+  $('#qTitle').textContent = q[0];
+  const box = $('#answers'); box.innerHTML = '';
+  q[1].forEach(([t, sub, w, fit], i) => {
+    const b = document.createElement('button');
+    b.className = 'ans';
+    b.innerHTML = `<span class="k">${'ABCD'[i]}</span><span><b>${t}</b><span>${sub}</span></span>`;
+    b.onclick = () => answer(w, fit);
+    box.appendChild(b);
+  });
+  const pct = Math.round(S.q/6*100);
+  $('#ring').style.background = `conic-gradient(var(--gold) ${pct*3.6}deg, rgba(255,255,255,.09) 0)`;
+  $('#ringT').textContent = pct + '%';
+  $('#qBack').classList.toggle('hidden', S.q === 0);
+}
+function answer(w, fit){
+  S.path.push({w, fit});
+  Object.entries(w).forEach(([k,v]) => S.scores[k] += v);
+  tone(430 + S.q*42, .08, 'sine', .03);
+  S.q++;
+  if (S.q < 6){ renderQ(); save() } else finish();
+}
+function back(){
+  if (!S.q) return;
+  S.q--; const last = S.path.pop();
+  Object.entries(last.w).forEach(([k,v]) => S.scores[k] -= v);
+  renderQ();
+}
+function finish(){
+  $('#quizBox').classList.add('hidden'); $('#analyzing').classList.remove('hidden');
+  riser(1.3);
+  setTimeout(() => {
+    const top = STAT_KEYS.slice().sort((a,b) => S.scores[b] - S.scores[a])[0];
+    S.roleKey = TOP_ROLE[top] || 'highside';
+    const tally = {};
+    S.path.forEach(p => { if (p.fit) tally[p.fit] = (tally[p.fit]||0)+1 });
+    S.fitLetter = Object.keys(tally).sort((a,b) => tally[b]-tally[a])[0] || '';
+    unlock(S.roleKey);
+    S.tickets += 1;
+    complete('quiz');
+    $('#analyzing').classList.add('hidden'); $('#resultBox').classList.remove('hidden');
+    renderResult(); drawShare(); chime('SSR'); save();
+    track('quiz_complete', {role_id:S.roleKey, fit_result:S.fitLetter, scores:S.scores});
+  }, 1500);
+}
+function unlock(k){
+  if (!has(k)){ S.unlocked.push(k); if (!S.fresh.includes(k)) S.fresh.push(k); return true }
+  return false;
+}
+function normStats(){
+  const max = Math.max(1, ...STAT_KEYS.map(k => S.scores[k]));
+  const o = {};
+  STAT_KEYS.forEach(k => o[k] = Math.max(52, Math.round(56 + (S.scores[k]/max)*42)));
+  return o;
+}
+function statBars(obj){
+  const L = zh() ? STAT_ZH : STAT_EN;
+  return STAT_KEYS.map(k =>
+    `<div class="stat"><span>${L[k]}</span><span class="track"><i style="width:${obj[k]}%"></i></span><b>${obj[k]}</b></div>`).join('');
+}
+function gearHTML(r){
+  const m = ['96%','92%','88%'];
+  const items = r.gear.slice(0,3).map((sku,i) => {
+    const p = P[sku] || {n:sku, s:''};
+    return `<a class="gearitem" href="${itemUrl(sku, r.fit)}" target="_blank" rel="noopener" data-sku="${sku}">
+      <b>${p.n}</b><small>${p.s}</small><div class="match">${m[i]}</div>
+      <small>${zh()?'版型匹配':'Fit match'}</small></a>`;
+  }).join('');
+  const c = CAT[r.cat];
+  return items + `<a class="gearitem" href="${catUrl(c.slug)}" target="_blank" rel="noopener">
+    <b>${c.n}</b><small>${zh()?'看更多同類版型':'Browse this category'}</small>
+    <div class="match" style="font-size:1rem">→</div></a>`;
+}
+function renderResult(){
+  if (!S.roleKey) return;
+  const r = ROLE(S.roleKey);
+  $('#resultCard').innerHTML = cardHTML(r, {name: rn(r), sub: rty(r)});
+  $('#resName').textContent = rn(r);
+  $('#resType').textContent = `${rty(r)}　·　${rw(r)}${S.fitLetter ? `　·　${zh()?'測驗結果':'Result'} ${S.fitLetter}` : ''}`;
+  $('#resQuote').textContent = '「' + rq(r) + '」';
+  $('#resStats').innerHTML = statBars(normStats());
+  $('#resGear').innerHTML = gearHTML(r);
+  $$('#resGear .gearitem[data-sku]').forEach(a => a.addEventListener('click', () =>
+    track('product_click', {sku:a.dataset.sku, role_id:r.key, fit_result:S.fitLetter})));
+}
+
+/* ═══════════ 圖鑑 ═══════════ */
+let dexFilter = 'all';
+function renderDex(){
+  const list = ROLES.filter(r => !r.hidden || has(r.key));
+  const show = list.filter(r =>
+    dexFilter === 'all' ? true : dexFilter === 'own' ? has(r.key) : r.tier === dexFilter);
+  $('#dexGrid').innerHTML = show.map(r => tile(r)).join('');
+  $$('#dexGrid .dextile').forEach(b => b.onclick = () => openSheet(b.dataset.k));
+  $('#dexCount').textContent = `${POOL.filter(r=>has(r.key)).length} / ${POOL.length}`;
+  $$('.filter').forEach(f => f.classList.toggle('on', f.dataset.f === dexFilter));
+}
+function tile(r){
+  const on = has(r.key), isNew = S.fresh.includes(r.key);
+  return `<button class="dextile ${on?'':'locked'}" data-k="${r.key}">
+    <div class="art">
+      <span class="tierbadge ${r.tier}">${r.tier}</span>
+      ${isNew?'<span class="newbadge">NEW</span>':''}
+      ${cardSVG(r, {name: rn(r), sub: rty(r), noText:true, simple:true})}
+      ${on?'':'<span class="lockmark">🔒</span>'}
+    </div>
+    <div class="meta"><b>${on ? rn(r) : (zh()?'未解鎖':'Locked')}</b>
+      <small>${on ? rty(r) : '？？？'}</small></div></button>`;
+}
+
+/* 角色詳情 */
+let sheetKey = '', sheetTab = 'world';
+function openSheet(k){
+  const r = ROLE(k); if (!r || !has(k)) { toast(zh()?'還沒解鎖這位角色':'Not unlocked yet'); return }
+  sheetKey = k; sheetTab = 'world';
+  S.fresh = S.fresh.filter(x => x !== k); save();
+  $('#sheetCard').innerHTML = cardHTML(r, {name: rn(r), sub: rty(r)});
+  $('#sheetName').textContent = rn(r);
+  $('#sheetType').textContent = `${rty(r)}　·　${r.tier}　·　${(zh()?ELE_ZH:ELE_EN)[r.ele]}`;
+  $('#sheetQuote').textContent = '「' + rq(r) + '」';
+  $$('#sheetTabs button').forEach(b => b.classList.toggle('on', b.dataset.t === 'world'));
+  renderSheetBody();
+  $('#sheet').classList.add('on');
+  track('role_view', {role_id:k});
+}
+function renderSheetBody(){
+  const r = ROLE(sheetKey); if (!r) return;
+  const b = $('#sheetBody');
+  if (sheetTab === 'world'){
+    b.innerHTML = `<p class="lore">${rl(r)}</p>
+      <dl class="kv">
+        <dt>${zh()?'所屬世界':'World'}</dt><dd>${rw(r)}</dd>
+        <dt>${zh()?'場景':'Scene'}</dt><dd>${rsc(r)}</dd>
+        <dt>${zh()?'宿敵':'Nemesis'}</dt><dd>${rfo(r)}</dd>
+        <dt>${zh()?'BRA CODE':'BRA CODE'}</dt><dd>${r.code}</dd>
+        ${r.fit ? `<dt>${zh()?'對應測驗':'Quiz result'}</dt><dd>${zh()?`凱莉愛 10 秒測驗 ${r.fit} 型`:`Kelly Love quiz result ${r.fit}`}</dd>` : ''}
+      </dl>`;
+  } else if (sheetTab === 'skill'){
+    b.innerHTML = r.skills.map(s =>
+      `<div class="skill"><b>${zh()?s.n:s.nEn}</b><small>${zh()?s.e:s.eEn}</small></div>`).join('')
+      + `<p class="micro" style="margin-top:12px">${zh()
+        ?'技能是版型結構的擬人化說明，不是醫療或塑形宣稱。'
+        :'Skills describe garment construction, not medical or shaping claims.'}</p>`;
+  } else if (sheetTab === 'stat'){
+    b.innerHTML = `<div class="statrow">${statBars(r.stats)}</div>
+      <p class="micro" style="margin-top:12px">${zh()
+        ?'屬性值代表這個版型「擅長解決哪一種穿著問題」，數字高不代表比較好，只代表方向不同。'
+        :'Attributes show which wear problem this construction solves best. Higher is not better—only different.'}</p>`;
+  } else {
+    b.innerHTML = `<div class="gear">${gearHTML(r)}</div>
+      <div class="btnrow" style="margin-top:14px">
+        <a class="btn btn-sm btn-rose" href="${CFG.lineOA}" target="_blank" rel="noopener">${tr('ctaLine')}</a>
+        <a class="btn btn-sm btn-ghost" href="${CFG.site}/page/in-store-fitting" target="_blank" rel="noopener">${tr('ctaStore')}</a>
+      </div>`;
+    $$('#sheetBody .gearitem[data-sku]').forEach(a => a.addEventListener('click', () =>
+      track('product_click', {sku:a.dataset.sku, role_id:r.key, from:'sheet'})));
+  }
+}
+
+/* ═══════════ 召喚 ═══════════ */
+const TIERS = {SSR:12, SR:38, R:50};
+function rollTier(force){
+  if (force) return force;
+  if (S.pity >= 9) return 'SSR';
+  const n = Math.random()*100;
+  return n < TIERS.SSR ? 'SSR' : n < TIERS.SSR + TIERS.SR ? 'SR' : 'R';
+}
+function pick(tier){
+  const p = POOL.filter(r => r.tier === tier);
+  return p[(Math.random()*p.length)|0];
+}
+function drawOne(force){
+  const t = rollTier(force), r = pick(t) || pick('R');
+  S.pity = t === 'SSR' ? 0 : S.pity + 1;
+  const isNew = unlock(r.key);
+  if (!isNew){ S.keys += (t==='SSR'?3:t==='SR'?2:1) }
+  S.recent.unshift(r.key); S.recent = S.recent.slice(0,12);
+  return {r, isNew};
+}
+async function summonFlow(n){
+  if (S.tickets < n){ toast(zh()?'召喚券不夠了。去簽到或分享拿券。':'Not enough tickets. Check in or share to earn more.'); return }
+  S.tickets -= n; ac();
+  const results = [];
+  for (let i=0;i<n;i++){
+    const force = (n === 10 && i === 9 && !results.some(x => x.r.tier === 'SSR')) ? 'SSR' : null;
+    results.push(drawOne(force));
+  }
+  const best = results.slice().sort((a,b) =>
+    ({UR:4,SSR:3,SR:2,R:1}[b.r.tier]) - ({UR:4,SSR:3,SR:2,R:1}[a.r.tier]))[0];
+  save(); renderGacha(); renderDex();
+  track('summon', {count:n, tiers:results.map(x=>x.r.tier), roles:results.map(x=>x.r.key)});
+  await cinematic(best.r, best.isNew);
+  if (n === 10){
+    const dupes = results.filter(x => !x.isNew).length;
+    toast(zh() ? `十連完成：新角色 ${n-dupes} 位，重複 ${dupes} 張已轉為鑰匙。`
+               : `10-pull done: ${n-dupes} new, ${dupes} duplicates converted to keys.`);
+  }
+}
+
+/* ── 召喚運鏡 ── */
+let skipFlag = false, cineBusy = false, cineGen = 0;
+const wait = ms => new Promise(res => {
+  const t = setTimeout(res, ms);
+  if (skipFlag){ clearTimeout(t); res() }
+});
+function raysSVG(color){
+  return `<svg viewBox="0 0 400 400" style="width:100%;height:100%">${
+    [...Array(28)].map((_,i)=>{
+      const a = i/28*360;
+      return `<path d="M200 200 L${200+Math.cos(a*Math.PI/180)*400} ${200+Math.sin(a*Math.PI/180)*400} L${200+Math.cos((a+3.2)*Math.PI/180)*400} ${200+Math.sin((a+3.2)*Math.PI/180)*400} Z" fill="${color}" opacity="${i%2?.5:.22}"/>`;
+    }).join('')}</svg>`;
+}
+async function cinematic(r, isNew){
+  if (cineBusy) return; cineBusy = true; skipFlag = false;
+  const gen = ++cineGen; const dead = () => gen !== cineGen;
+  const tierC = {UR:'#ffd9e6', SSR:'#e6c88c', SR:'#b294dd', R:'#dcd0d4'}[r.tier];
+  const O=$('#summon'), orb=$('#smOrb'), rays=$('#smRays'), ring=$('#smRing'),
+        card=$('#smCard'), cap=$('#smCap'), flash=$('#smFlash'), act=$('#smActions');
+  O.classList.add('on');
+  orb.style.cssText = ''; rays.style.opacity=0; ring.style.opacity=0;
+  card.style.cssText = ''; cap.style.opacity=0; act.style.opacity=0; flash.style.opacity=0;
+  rays.innerHTML = raysSVG(tierC);
+  card.innerHTML = cardHTML(r, {name: rn(r), sub: rty(r), isNew});
+  $('#smName').textContent = rn(r);
+  $('#smWorld').textContent = `${r.tier}　·　${rw(r)}`;
+  document.body.style.overflow = 'hidden';
+
+  /* 1. 蓄力 */
+  orb.style.transition = 'transform 1.05s cubic-bezier(.4,0,.2,1),opacity .5s';
+  orb.style.opacity = 1; orb.style.transform = 'scale(1)';
+  riser(1.15);
+  await wait(60);
+  orb.style.transform = 'scale(2.5)';
+  await wait(950); if (dead()) return;
+
+  /* 2. SSR/UR 的三段預告閃光 */
+  if (!skipFlag && (r.tier === 'SSR' || r.tier === 'UR')){
+    const pre = ['#b294dd', '#e6c88c', tierC];
+    for (const c of pre){
+      orb.style.transition = 'transform .16s, box-shadow .16s';
+      orb.style.boxShadow = `0 0 140px 40px ${c}`;
+      orb.style.transform = 'scale(3.1)';
+      tone(880, .1, 'triangle', .05);
+      await wait(150);
+      orb.style.transform = 'scale(2.4)';
+      await wait(140); if (dead()) return;
+    }
+  }
+
+  /* 3. 破殼 */
+  O.classList.add('shaking'); impact();
+  ring.style.transition = 'none'; ring.style.opacity = 1;
+  ring.style.transform = 'scale(1)'; ring.style.borderColor = tierC;
+  await wait(20);
+  ring.style.transition = 'transform 1s cubic-bezier(.1,.8,.2,1), opacity 1s';
+  ring.style.transform = 'scale(90)'; ring.style.opacity = 0;
+  flash.style.transition = 'none'; flash.style.opacity = 1;
+  orb.style.opacity = 0;
+  await wait(70); if (dead()) return;
+  flash.style.transition = 'opacity .5s'; flash.style.opacity = 0;
+  rays.style.transition = 'opacity .5s, transform 9s linear';
+  rays.style.opacity = r.tier === 'R' ? .25 : .6;
+  rays.style.transform = 'rotate(180deg)';
+  setTimeout(()=> O.classList.remove('shaking'), 460);
+
+  /* 4. 出卡 */
+  card.style.transition = 'transform .85s cubic-bezier(.15,1.5,.35,1), opacity .4s';
+  card.style.opacity = 1;
+  card.style.transform = 'translate(-50%,-50%) scale(1) rotateY(0deg)';
+  chime(r.tier);
+  burst($('#sumCanvas'), r.tier==='R'?60:170,
+        r.tier==='UR' ? ['#fff','#ffd9e6','#e6c88c','#ffb3cd']
+      : r.tier==='SSR'? ['#fff','#e6c88c','#ffe9c9','#d9738e']
+      : r.tier==='SR' ? ['#fff','#b294dd','#d6c0f5'] : ['#fff','#dcd0d4'],
+        {up:2, spread:9, frames:150});
+  await wait(560); if (dead()) return;
+  cap.style.transition = 'opacity .5s, transform .5s';
+  cap.style.opacity = 1;
+  await wait(260); if (dead()) return;
+  act.style.transition = 'opacity .4s'; act.style.opacity = 1;
+  cineBusy = false;
+}
+function closeCinematic(){
+  skipFlag = true; cineBusy = false; cineGen++;
+  $('#summon').classList.remove('on');
+  document.body.style.overflow = '';
+  renderDex(); renderGacha(); save();
+}
+
+/* ── 寶箱 ── */
+async function openChest(){
+  if (S.friends < 3 || S.chestOpened) return;
+  const c = $('#chest'); ac();
+  c.classList.add('shake'); riser(1.4);
+  await wait(1300);
+  c.classList.remove('shake'); c.classList.add('open'); impact();
+  burst($('#chestCanvas'), 150, ['#ffe9c9','#e6c88c','#fff','#d9738e'], {up:7, spread:5, frames:150, y:110});
+  S.chestOpened = true; S.tickets += 3; S.keys += 1;
+  const locked = POOL.filter(r => !has(r.key) && r.tier === 'SSR');
+  const gift = (locked.length ? locked : POOL.filter(r => !has(r.key)))[0];
+  save();
+  await wait(700);
+  if (gift){ unlock(gift.key); await cinematic(gift, true) }
+  else toast(zh()?'寶箱開啟：召喚券 ×3、鑰匙 ×1':'Chest opened: 3 tickets, 1 key');
+  renderGacha(); save();
+  track('chest_open', {friends:S.friends});
+}
+function renderGacha(){
+  $('#ticketN').textContent = S.tickets;
+  $('#keyN').textContent = S.keys;
+  $('#exchangeBtn').disabled = S.keys < 10 || POOL.every(r => has(r.key));
+  renderExchange();
+  $('#chestP').textContent = `${S.friends} / 3`;
+  $('#chestBar').style.width = Math.min(100, S.friends/3*100) + '%';
+  $('#openChest').disabled = !(S.friends >= 3 && !S.chestOpened);
+  $('#chest').classList.toggle('open', S.chestOpened);
+  const rec = S.recent.map(k => ROLE(k)).filter(Boolean);
+  $('#recentEmpty').classList.toggle('hidden', rec.length > 0);
+  $('#recentGrid').innerHTML = rec.map(r => tile(r)).join('');
+  $$('#recentGrid .dextile').forEach(b => b.onclick = () => openSheet(b.dataset.k));
+}
+
+function renderExchange(){
+  const box = $('#exchangeGrid'); if (!box) return;
+  const locked = POOL.filter(r => !has(r.key));
+  box.innerHTML = locked.map(r =>
+    `<button class="pick" data-k="${r.key}">${cardSVG(r,{noText:true,simple:true})}
+      <small>${r.tier}</small></button>`).join('') ||
+    `<p class="micro">${zh()?'12 位角色都解鎖了。':'All 12 roles unlocked.'}</p>`;
+  $$('#exchangeGrid .pick').forEach(b => b.onclick = async () => {
+    if (S.keys < 10){ toast(zh()?'鑰匙不夠':'Not enough keys'); return }
+    S.keys -= 10; const r = ROLE(b.dataset.k); unlock(r.key);
+    S.recent.unshift(r.key); S.recent = S.recent.slice(0,12);
+    save(); renderGacha(); renderDex();
+    await cinematic(r, true);
+    track('key_exchange', {role_id:r.key});
+  });
+}
+
+/* ═══════════ 戰隊 ═══════════ */
+let pairA = null, pairB = null;
+function ownedRoles(){ return ROLES.filter(r => has(r.key)) }
+function shufflePair(){
+  const own = ownedRoles();
+  if (own.length < 2){ toast(zh()?'至少要有 2 位角色才能碰撞。先完成測驗或召喚。':'You need at least 2 roles. Take the quiz or summon first.'); return false }
+  pairA = own[(Math.random()*own.length)|0];
+  do { pairB = own[(Math.random()*own.length)|0] } while (pairB === pairA && own.length > 1);
+  $('#miniL').innerHTML = cardSVG(pairA, {noText:true, simple:true});
+  $('#miniR').innerHTML = cardSVG(pairB, {noText:true, simple:true});
+  $('#miniL').style.transform = 'translateX(0)';
+  $('#miniR').style.transform = 'translateX(0)';
+  $('#bondOut').classList.add('hidden');
+  return true;
+}
+function bondOf(a, b){
+  if (a.ele === b.ele){
+    const nm = (zh()?ELE_ZH:ELE_EN)[a.ele];
+    return {n: zh()? nm+'共鳴' : nm+' Resonance',
+            d: zh()? `同屬性疊加，${nm}效果提升 1.5 倍——同一個方向做到底，通常最有感。`
+                   : `Same attribute stacks to 1.5×. Going all-in on one direction is usually what you feel most.`};
+  }
+  const f = BONDS.find(x => (x.a===a.ele&&x.b===b.ele) || (x.a===b.ele&&x.b===a.ele));
+  if (f) return {n: zh()?f.n:f.nEn, d: zh()?f.d:f.dEn};
+  return {n: zh()?'互補聯手':'Complementary Pair',
+          d: zh()?'兩種方向互相補位，適合同時有多種穿著困擾的人。'
+                :'Two directions covering each other—useful when several problems appear at once.'};
+}
+async function collide(){
+  if (!pairA || !pairB){ if (!shufflePair()) return }
+  ac(); $('#bondOut').classList.add('hidden');
+  const L = $('#miniL'), Rr = $('#miniR'), imp = $('#impact');
+  const w = $('#arena').clientWidth, dist = w/2 - 62;
+  L.style.transition = 'transform .62s cubic-bezier(.6,0,.9,.5)';
+  Rr.style.transition = 'transform .62s cubic-bezier(.6,0,.9,.5)';
+  L.style.transform = `translateX(${dist}px) rotate(8deg)`;
+  Rr.style.transform = `translateX(${-dist}px) rotate(-8deg)`;
+  riser(.6);
+  await wait(620);
+  impact(); $('#arena').classList.add('shaking');
+  imp.style.transition = 'none'; imp.style.opacity = 1; imp.style.transform = 'scale(1)';
+  await wait(20);
+  imp.style.transition = 'transform .8s cubic-bezier(.1,.8,.2,1), opacity .8s';
+  imp.style.transform = 'scale(46)'; imp.style.opacity = 0;
+  burst($('#arenaCanvas'), 110, [pairA.art.glow, pairB.art.glow, '#fff', '#e6c88c'], {spread:8, frames:110});
+  L.style.transition = 'transform .5s cubic-bezier(.2,1.6,.4,1)';
+  Rr.style.transition = 'transform .5s cubic-bezier(.2,1.6,.4,1)';
+  L.style.transform = 'translateX(0)'; Rr.style.transform = 'translateX(0)';
+  setTimeout(() => $('#arena').classList.remove('shaking'), 450);
+  await wait(420);
+  const b = bondOf(pairA, pairB);
+  $('#bondName').textContent = b.n;
+  $('#bondDesc').textContent = `${rn(pairA)} × ${rn(pairB)} — ${b.d}`;
+  $('#bondOut').classList.remove('hidden');
+  chime('SR');
+  track('collide', {a:pairA.key, b:pairB.key, bond:b.n});
+}
+function renderSquad(){
+  const own = ownedRoles();
+  $('#picker').innerHTML = own.map(r =>
+    `<button class="pick ${S.squad.includes(r.key)?'on':''}" data-k="${r.key}">
+      ${cardSVG(r, {noText:true, simple:true})}<small>${rn(r).split('・')[0]}</small></button>`).join('') ||
+    `<p class="micro">${zh()?'先完成測驗或召喚，才會有隊員可選。':'Complete the quiz or summon to get members.'}</p>`;
+  $$('#picker .pick').forEach(b => b.onclick = () => {
+    const k = b.dataset.k;
+    if (S.squad.includes(k)) S.squad = S.squad.filter(x => x !== k);
+    else { if (S.squad.length >= 5){ toast(zh()?'最多 5 位':'Up to 5 members'); return } S.squad.push(k) }
+    tone(560,.06,'sine',.03); save(); renderSquad();
+  });
+  $('#slots').innerHTML = [0,1,2,3,4].map(i => {
+    const k = S.squad[i];
+    return `<div class="slot ${k?'filled':''}">${k ? cardSVG(ROLE(k), {noText:true, simple:true}) : '+'}</div>`;
+  }).join('');
+  $('#fuseBtn').disabled = S.squad.length < 3;
+  if (!pairA) { $('#miniL').innerHTML=''; $('#miniR').innerHTML=''; }
+  if (S.fused) showFused();
+}
+function fuse(){
+  if (S.squad.length < 3) return;
+  const ms = S.squad.map(k => ROLE(k));
+  const tot = {}; STAT_KEYS.forEach(k => tot[k] = Math.round(ms.reduce((s,m)=>s+m.stats[k],0)/ms.length));
+  const sum = STAT_KEYS.reduce((s,k)=>s+tot[k],0);
+  const tier = ms.some(m=>m.tier==='UR') ? 'UR' : sum >= 500 ? 'SSR' : sum >= 460 ? 'SR' : 'R';
+  const domEle = Object.entries(ms.reduce((a,m)=>{a[m.ele]=(a[m.ele]||0)+1;return a},{}))
+                  .sort((a,b)=>b[1]-a[1])[0][0];
+  const domStat = STAT_KEYS.slice().sort((a,b)=>tot[b]-tot[a])[0];
+  const base = SQUAD_NAMES[domEle] || SQUAD_NAMES.support;
+  const name = zh() ? base[0] : base[1];
+  S.fused = {members:S.squad.slice(), stats:tot, tier, name, dom:domStat};
+  save(); complete('fuse'); showFused(); chime(tier);
+  toast(zh()?`合成成功：${name}（${tier}）`:`Fused: ${name} (${tier})`);
+  track('fuse', {members:S.squad, tier});
+}
+function showFused(){
+  const f = S.fused; if (!f) return;
+  const ms = f.members.map(k => ROLE(k)).filter(Boolean);
+  if (!ms.length) return;
+  $('#fusedPanel').classList.remove('hidden');
+  $('#fusedCard').innerHTML =
+    `<div class="cardframe tier-${f.tier}"><span class="tierbadge ${f.tier}">${f.tier}</span>
+     ${squadSVG(ms, f.name, f.tier)}<div class="holo"></div></div>`;
+  $('#fusedName').textContent = f.name;
+  $('#fusedType').textContent = ms.map(m => rn(m)).join('　/　');
+  $('#fusedStats').innerHTML = statBars(f.stats);
+  const L = zh()?STAT_ZH:STAT_EN;
+  $('#fusedLore').textContent = zh()
+    ? `這支戰隊最強的方向是「${L[f.dom]}」。把 ${ms.length} 種版型需求放在一起看，通常代表妳的下一件內衣要同時處理不只一個問題——挑選時先解決分數最高的那一項。`
+    : `This squad leans hardest on ${L[f.dom]}. Combining ${ms.length} fit needs usually means your next bra has to solve more than one problem—start with the highest score.`;
+}
+
+/* ═══════════ 每日 / Boss ═══════════ */
+function checkin(){
+  const t = today();
+  if (S.lastCheckin === t){ toast(zh()?'今天已經簽到了':'Already checked in today'); return }
+  const d = S.lastCheckin ? dayDiff(S.lastCheckin, t) : 99;
+  S.streak = d === 1 ? S.streak + 1 : 1;
+  S.lastCheckin = t; S.tickets += 1;
+  if (S.streak % 3 === 0) S.keys += 1;
+  tone(660,.14,'sine',.05); tone(880,.18,'triangle',.04,.09);
+  complete('checkin');
+  if (S.streak >= 7 && !has('goddess')){
+    unlock('goddess'); save(); renderDaily();
+    cinematic(ROLE('goddess'), true);
+  } else {
+    toast(zh()?`連續 ${S.streak} 天：召喚券 +1`:`Day ${S.streak}: +1 ticket`);
+  }
+  save(); renderDaily(); renderGacha();
+  track('checkin', {streak:S.streak});
+}
+function renderDaily(){
+  $('#streakT').textContent = zh() ? `連續 ${S.streak} 天` : `${S.streak}-day streak`;
+  $('#streak').innerHTML = [1,2,3,4,5,6,7].map(d => {
+    const on = ((S.streak-1) % 7) + 1 >= d && S.streak > 0;
+    const rw = d === 7 ? (zh()?'限定':'Limited') : d % 3 === 0 ? (zh()?'鑰匙':'Key') : (zh()?'券':'Ticket');
+    return `<div class="day ${on?'on':''} ${d === ((S.streak-1)%7)+1 && S.streak?'today':''}"><b>D${d}</b>${rw}</div>`;
+  }).join('');
+  $('#checkinBtn').disabled = S.lastCheckin === today();
+  $('#hpBar').style.width = S.bossHp + '%';
+  $('#hpText').textContent = S.bossHp + '%';
+  const phase = S.bossHp > 66 ? 1 : S.bossHp > 33 ? 2 : S.bossHp > 0 ? 3 : 4;
+  $('#phaseChip').textContent = phase === 4 ? (zh()?'已擊敗':'DEFEATED') : `PHASE ${phase}`;
+  $('#missions').innerHTML = MISSIONS.map(m => {
+    const done = !!S.missions[m.k];
+    return `<div class="mission ${done?'done':''}" data-m="${m.k}">
+      <span class="tick">${done?'✓':''}</span>
+      <span><b>${zh()?m.n:m.nEn}</b><small>${done?(zh()?'已完成':'Completed'):(zh()?'待完成':'Pending')} · ${zh()?'Boss 傷害':'Damage'} ${m.dmg}%</small></span>
+      <span class="rewardchip">${m.r}</span></div>`;
+  }).join('');
+  $$('#missions .mission').forEach(el => el.onclick = () => missionClick(el.dataset.m));
+}
+function missionClick(k){
+  const m = MISSIONS.find(x => x.k === k); if (!m) return;
+  if (S.missions[k]){ toast(zh()?'這個任務已完成':'Already completed'); return }
+  if (m.url){ window.open(m.url, '_blank', 'noopener'); complete(k); return }
+  if (k === 'quiz')    { go('quiz'); return }
+  if (k === 'share')   { go('quiz'); setTimeout(()=>$('#sharePanel')?.scrollIntoView({behavior:'smooth'}), 320); return }
+  if (k === 'friend')  { go('quiz'); toast(zh()?'複製邀請連結分享給好友':'Copy your invite link and share it'); return }
+  if (k === 'checkin') { checkin(); return }
+  if (k === 'fuse')    { go('squad'); return }
+}
+function complete(k){
+  const m = MISSIONS.find(x => x.k === k); if (!m || S.missions[k]) return;
+  S.missions[k] = true;
+  if (/券/.test(m.r) || /ticket/i.test(m.r)) S.tickets += (m.r.match(/\d/)||[1])[0]|0 || 1;
+  if (/鑰匙|Key/i.test(m.r)) S.keys += 1;
+  attack(m.dmg, zh()?m.n:m.nEn);
+  reward('mission_'+k);
+  save(); renderDaily(); renderGacha();
+}
+function attack(dmg, label){
+  if (S.bossHp <= 0) return;
+  S.bossHp = Math.max(0, S.bossHp - dmg);
+  tone(180,.16,'sawtooth',.035);
+  const host = $('#hpBar')?.closest('.panel');
+  if (host){
+    const d = document.createElement('div');
+    d.className = 'dmg'; d.textContent = `-${dmg}%`;
+    d.style.left = (30 + Math.random()*50) + '%'; d.style.top = '58%';
+    host.appendChild(d); setTimeout(()=>d.remove(), 1200);
+  }
+  if (S.bossHp === 0 && !has('goddess')){
+    unlock('goddess'); save();
+    setTimeout(()=> cinematic(ROLE('goddess'), true), 500);
+  }
+  save(); renderDaily();
+  track('boss_attack', {dmg, hp:S.bossHp, source:label});
+}
+function countdown(){
+  const end = CFG.eventEndsAt ? new Date(CFG.eventEndsAt).getTime()
+            : Date.now() + (2*24+8)*3600*1000;
+  const box = $('#timer');
+  (function tick(){
+    let ms = Math.max(0, end - Date.now()), s = Math.floor(ms/1000);
+    const d = Math.floor(s/86400); s %= 86400;
+    const h = Math.floor(s/3600); s %= 3600;
+    const m = Math.floor(s/60), sec = s%60;
+    box.innerHTML = [[d,'DAY'],[h,'HR'],[m,'MIN'],[sec,'SEC']]
+      .map(([v,l]) => `<div class="tbox"><b>${String(v).padStart(2,'0')}</b><small>${l}</small></div>`).join('');
+    setTimeout(tick, 1000);
+  })();
+}
+
+/* ═══════════ 分享卡 ═══════════ */
+const THEMES = [
+  {k:'night',  bg:['#241631','#0d0812'], accent:'#e6c88c', text:'#fff8f0', sub:'#e6c88c'},
+  {k:'peach',  bg:['#f6d9d3','#e2a9ad'], accent:'#7a2f45', text:'#3a1220', sub:'#7a2f45'},
+  {k:'champ',  bg:['#2b2016','#120c08'], accent:'#f0d9a4', text:'#fff6e6', sub:'#f0d9a4'}
+];
+function referralUrl(){
+  if (!S.referral_id) S.referral_id = 'KL' + Math.random().toString(36).slice(2,8).toUpperCase();
+  const base = /^https?:/.test(location.origin) ? location.origin + location.pathname : CFG.quizPage;
+  return `${base}?r=${encodeURIComponent(S.referral_id)}`;
+}
+function roundRect(x,y,w,h,r){
+  const c = shareCtx();
+  c.beginPath();
+  if (c.roundRect) c.roundRect(x,y,w,h,r);
+  else { c.moveTo(x+r,y); c.arcTo(x+w,y,x+w,y+h,r); c.arcTo(x+w,y+h,x,y+h,r); c.arcTo(x,y+h,x,y,r); c.arcTo(x,y,x+w,y,r); c.closePath() }
+}
+let _ctx;
+const shareCtx = () => _ctx || (_ctx = $('#shareCanvas').getContext('2d'));
+function wrapText(c, text, x, y, max, lh){
+  const chars = zh() ? [...text] : text.split(' ');
+  let line = '', yy = y;
+  for (const ch of chars){
+    const t = zh() ? line + ch : (line ? line+' ' : '') + ch;
+    if (c.measureText(t).width > max && line){ c.fillText(line, x, yy); line = ch; yy += lh }
+    else line = t;
+  }
+  if (line) c.fillText(line, x, yy);
+  return yy;
+}
+async function drawShare(){
+  const cv = $('#shareCanvas'); if (!cv) return;
+  const c = shareCtx(), r = S.roleKey ? ROLE(S.roleKey) : ROLE('highside');
+  const th = THEMES[S.theme % THEMES.length];
+  try{ if (document.fonts && document.fonts.ready) await document.fonts.ready }catch(e){}
+
+  const g = c.createLinearGradient(0,0,300,1920);
+  g.addColorStop(0, th.bg[0]); g.addColorStop(1, th.bg[1]);
+  c.fillStyle = g; c.fillRect(0,0,1080,1920);
+
+  c.save(); c.globalAlpha = .1; c.strokeStyle = th.accent; c.lineWidth = 2;
+  for (let i=0;i<26;i++){ c.beginPath(); c.arc(540, 640, 120+i*52, 0, 6.284); c.stroke() }
+  c.restore();
+
+  /* 角色圖（SVG → Image） */
+  const svg = cardSVG(r, {noText:true});
+  await new Promise(res => {
+    const img = new Image();
+    img.onload = () => {
+      const w = 760, h = w * (H/W), x = (1080-w)/2, y = 250;
+      c.save(); roundRect(x,y,w,h,34); c.clip(); c.drawImage(img,x,y,w,h); c.restore();
+      c.strokeStyle = th.accent; c.lineWidth = 4; roundRect(x,y,w,h,34); c.stroke();
+      res();
+    };
+    img.onerror = res;
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  });
+
+  c.textAlign = 'center';
+  c.fillStyle = th.sub; c.font = '600 34px "Noto Sans TC",sans-serif';
+  c.fillText('KELLY LOVE · BRA UNIVERSE', 540, 130);
+  c.font = '900 48px "Noto Serif TC",serif'; c.fillStyle = th.text;
+  c.fillText(zh()?'我的內衣角色是':'My bra role is', 540, 200);
+
+  c.fillStyle = th.accent; c.font = '700 40px Georgia,serif';
+  c.fillText(`${r.tier}　·　${r.code}`, 540, 1300);
+  c.fillStyle = th.text; c.font = '900 84px "Noto Serif TC",serif';
+  c.fillText(rn(r), 540, 1400);
+  c.fillStyle = th.sub; c.font = '500 38px "Noto Sans TC",sans-serif';
+  c.fillText(rty(r), 540, 1462);
+
+  c.font = '400 34px "Noto Sans TC",sans-serif'; c.fillStyle = th.text;
+  c.globalAlpha = .85; wrapText(c, '「'+rq(r)+'」', 540, 1540, 860, 48); c.globalAlpha = 1;
+
+  const st = normStats();
+  const L = zh()?STAT_ZH:STAT_EN;
+  const bars = STAT_KEYS.slice().sort((a,b)=>st[b]-st[a]).slice(0,3);
+  bars.forEach((k,i) => {
+    const y = 1640 + i*54, x = 190, w = 700;
+    c.textAlign = 'left'; c.font = '700 28px "Noto Sans TC",sans-serif';
+    c.fillStyle = th.sub; c.fillText(L[k], x, y+8);
+    c.globalAlpha = .22; c.fillStyle = th.text;
+    roundRect(x+110, y-12, w-160, 18, 9); c.fill(); c.globalAlpha = 1;
+    c.fillStyle = th.accent;
+    roundRect(x+110, y-12, (w-160)*st[k]/100, 18, 9); c.fill();
+    c.fillStyle = th.sub; c.textAlign = 'right'; c.fillText(st[k], x+w, y+8);
+  });
+
+  c.textAlign = 'center';
+  c.fillStyle = th.accent; c.globalAlpha = .5;
+  c.fillRect(190, 1810, 700, 2); c.globalAlpha = 1;
+  c.font = '700 30px "Noto Sans TC",sans-serif'; c.fillStyle = th.text;
+  c.fillText(zh()?`邀請碼 ${S.referral_id||'—'}　·　kellylove.tw`:`Invite ${S.referral_id||'—'} · kellylove.tw`, 540, 1866);
+  $('#refUrl').textContent = referralUrl();
+  renderThemes();
+}
+function renderThemes(){
+  $('#themes').innerHTML = THEMES.map((t,i) =>
+    `<button class="theme ${i===S.theme?'on':''}" data-i="${i}" aria-label="${t.k}"
+      style="background:linear-gradient(140deg,${t.bg[0]},${t.bg[1]})"></button>`).join('');
+  $$('#themes .theme').forEach(b => b.onclick = () => { S.theme = +b.dataset.i; save(); drawShare() });
+}
+function shareDone(){ complete('share'); reward('share'); track('share', {role_id:S.roleKey}) }
+function downloadShare(){
+  shareDone();
+  const a = document.createElement('a');
+  a.download = `kelly-love-${S.roleKey||'role'}-story.png`;
+  a.href = $('#shareCanvas').toDataURL('image/png');
+  a.click();
+  toast(zh()?'已下載分享卡':'Card downloaded');
+}
+async function systemShare(){
+  shareDone();
+  const r = S.roleKey ? ROLE(S.roleKey) : null;
+  const text = zh() ? `我的內衣角色是「${r?rn(r):''}」，來測測妳的。` : `My bra role is “${r?rn(r):''}”. Find yours.`;
+  try{
+    const blob = await new Promise(res => $('#shareCanvas').toBlob(res, 'image/png'));
+    const file = new File([blob], 'kelly-love-role.png', {type:'image/png'});
+    const data = {title:'Kelly Love BRA UNIVERSE', text, url: referralUrl(), files:[file]};
+    if (navigator.canShare && navigator.canShare(data)) { await navigator.share(data); return }
+    if (navigator.share) { await navigator.share({title:data.title, text, url:data.url}); return }
+    throw 0;
+  }catch(e){ copyLink() }
+}
+function copyLink(){
+  const u = referralUrl();
+  navigator.clipboard?.writeText(u).then(
+    () => toast(zh()?'邀請連結已複製':'Invite link copied'),
+    () => prompt(zh()?'複製這個連結：':'Copy this link:', u));
+  shareDone();
+}
+
+/* ═══════════ API / LINE / CRM ═══════════ */
+const live = () => !!CFG.apiBase;
+async function api(path, method='POST', body){
+  if (!live()) return null;
+  const res = await fetch(CFG.apiBase + path, {
+    method, headers:{
+      'Content-Type':'application/json',
+      'X-Idempotency-Key': (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()+Math.random())),
+      ...(S.user.token ? {'Authorization':'Bearer ' + S.user.token} : {})
+    },
+    body: body ? JSON.stringify(body) : undefined
+  });
+  if (!res.ok) throw new Error('api ' + res.status);
+  return res.json();
+}
+async function track(event, extra={}){
+  const payload = {event, ts:new Date().toISOString(), member_id:S.user.member_id,
+    referral_id:S.referral_id, ref_from:S.refFrom, ...extra};
+  if (!live()){ return }
+  try{ await api('/events','POST',payload) }
+  catch(e){ S.queue.push(payload); S.queue = S.queue.slice(-60); save() }
+}
+async function reward(trigger){
+  if (!live()) return;
+  try{
+    const r = await api('/rewards/claim','POST',{trigger, member_id:S.user.member_id, referral_id:S.referral_id});
+    if (r?.granted?.length) toast(zh()?`獎勵已發放：${r.granted.join('、')}`:`Rewards granted: ${r.granted.join(', ')}`);
+  }catch(e){}
+}
+async function flushQueue(){
+  if (!live() || !S.queue.length) return;
+  const q = S.queue.slice(); S.queue = [];
+  for (const p of q){ try{ await api('/events','POST',p) }catch(e){ S.queue.push(p) } }
+  save();
+}
+async function lineLogin(){
+  if (!CFG.liffId || typeof liff === 'undefined'){
+    S.user = {member_id:'DEMO-' + Math.random().toString(36).slice(2,8).toUpperCase(),
+              line_uid:null, email:null, name:'Demo'};
+    save(); renderState();
+    toast(zh()?'Demo 身份已建立（尚未設定 LIFF ID）':'Demo identity created (no LIFF ID set)');
+    return;
+  }
+  try{
+    await liff.init({liffId: CFG.liffId});
+    if (!liff.isLoggedIn()){ liff.login({redirectUri: location.href}); return }
+    const [profile, idToken] = [await liff.getProfile(), liff.getIDToken()];
+    const res = await api('/auth/line','POST',{id_token:idToken, referral_id:S.refFrom, display_name:profile.displayName});
+    S.user = {member_id:res?.member_id || profile.userId, line_uid:profile.userId,
+              email:res?.email || null, name:profile.displayName, token:res?.token};
+    save(); renderState(); await syncCrm();
+    toast(zh()?`已連結：${profile.displayName}`:`Connected: ${profile.displayName}`);
+    track('login', {method:'line'});
+  }catch(e){ toast(zh()?'LINE 登入失敗，請確認 LIFF 設定':'LINE login failed. Check LIFF settings') }
+}
+async function requestOtp(){
+  const email = $('#emailIn').value.trim();
+  if (!/.+@.+\..+/.test(email)){ toast(zh()?'請輸入正確的 Email':'Enter a valid email'); return }
+  try{ await api('/auth/otp','POST',{email}) }catch(e){}
+  $('#otpBox').classList.remove('hidden');
+  toast(live() ? (zh()?'驗證碼已寄出':'Code sent') : (zh()?'Demo 模式：輸入任意 6 碼':'Demo: enter any 6 digits'));
+}
+async function verifyOtp(){
+  const email = $('#emailIn').value.trim(), code = $('#otpIn').value.trim();
+  if (code.length < 4){ toast(zh()?'請輸入驗證碼':'Enter the code'); return }
+  let res = null;
+  try{ res = await api('/auth/otp/verify','POST',{email, code, referral_id:S.refFrom}) }catch(e){}
+  S.user = {member_id: res?.member_id || ('EM-' + Math.random().toString(36).slice(2,8).toUpperCase()),
+            email, line_uid:null, name:email.split('@')[0], token:res?.token};
+  save(); renderState(); syncCrm();
+  toast(zh()?'已登入':'Signed in');
+  track('login', {method:'email'});
+}
+async function syncCrm(){
+  const payload = {
+    member_id:S.user.member_id, line_uid:S.user.line_uid, email:S.user.email,
+    referral_id:S.referral_id, ref_from:S.refFrom,
+    role_id:S.roleKey, fit_result:S.fitLetter, fit_scores:S.scores,
+    collection:S.unlocked, squad:S.fused, streak:S.streak, last_checkin:S.lastCheckin,
+    tickets:S.tickets, keys:S.keys, friends:S.friends, boss_hp:S.bossHp,
+    tags: buildTags(), updated_at:new Date().toISOString()
+  };
+  if (!live()){ renderState(payload); toast(zh()?'Demo 模式：已在本機模擬同步':'Demo: sync simulated locally'); return }
+  try{ await api('/crm/sync','POST',payload); await flushQueue();
+       renderState(payload); toast(zh()?'已同步 CRM':'Synced to CRM') }
+  catch(e){ toast(zh()?'同步失敗，稍後自動重試':'Sync failed, will retry') }
+}
+function buildTags(){
+  const t = [];
+  if (S.roleKey) t.push('role:' + S.roleKey);
+  if (S.fitLetter) t.push('fit:' + S.fitLetter);
+  const r = S.roleKey && ROLE(S.roleKey);
+  if (r){ t.push('ele:' + r.ele); r.gear.forEach(g => t.push('sku_interest:' + g)); t.push('cat:' + CAT[r.cat].slug) }
+  if (S.streak >= 3) t.push('streak:3plus');
+  if (S.friends > 0) t.push('referrer:active');
+  if (S.unlocked.length >= 6) t.push('collector');
+  return t;
+}
+function renderState(extra){
+  $('#stateBox').textContent = JSON.stringify(extra || {
+    member_id:S.user.member_id, mode: live() ? 'live' : 'demo',
+    role_id:S.roleKey, fit_result:S.fitLetter,
+    collection:`${POOL.filter(r=>has(r.key)).length}/${POOL.length}`,
+    tickets:S.tickets, keys:S.keys, streak:S.streak, friends:S.friends,
+    boss_hp:S.bossHp, referral_id:S.referral_id, ref_from:S.refFrom || null,
+    tags:buildTags()
+  }, null, 2);
+}
+
+/* ═══════════ 邀請 ═══════════ */
+function parseRef(){
+  try{
+    const u = new URL(location.href);
+    const from = u.searchParams.get('r');
+    if (from && from !== S.referral_id){ S.refFrom = from; track('referral_land', {from}) }
+  }catch(e){}
+  if (!S.referral_id) S.referral_id = 'KL' + Math.random().toString(36).slice(2,8).toUpperCase();
+}
+function simFriend(){
+  if (S.friends >= 3 && !S.chestOpened){ toast(zh()?'已達 3 位，去開寶箱':'3 friends reached—open the chest'); return }
+  S.friends++; S.tickets += 2;
+  complete('friend');
+  tone(720,.1,'sine',.04); tone(960,.14,'triangle',.035,.08);
+  toast(zh()?`好友完成測驗：召喚券 +2（${S.friends}/3）`:`Friend completed: +2 tickets (${S.friends}/3)`);
+  save(); renderGacha(); renderState();
+  track('referral_complete', {friends:S.friends});
+}
+
+/* ═══════════ 綁定 ═══════════ */
+function bind(){
+  $$('.tab').forEach(b => b.onclick = () => go(b.dataset.v));
+  $('#goQuiz').onclick = () => { go('quiz'); startQuiz() };
+  $('#goDex').onclick  = () => go('dex');
+  $('#startQuiz').onclick = startQuiz;
+  $('#qBack').onclick = back;
+  $('#retake').onclick = () => { $('#resultBox').classList.add('hidden'); $('#quizIntro').classList.remove('hidden') };
+  $('#toShare').onclick = () => $('#sharePanel').scrollIntoView({behavior:'smooth'});
+
+  $$('.filter').forEach(f => f.onclick = () => { dexFilter = f.dataset.f; renderDex() });
+  $$('[data-close]').forEach(e => e.onclick = () => $('#sheet').classList.remove('on'));
+  $$('#sheetTabs button').forEach(b => b.onclick = () => {
+    sheetTab = b.dataset.t;
+    $$('#sheetTabs button').forEach(x => x.classList.toggle('on', x === b));
+    renderSheetBody();
+  });
+  $('#sheetShare').onclick = () => {
+    if (sheetKey) { S.roleKey = sheetKey; save(); renderResult(); drawShare();
+      $('#sheet').classList.remove('on'); go('quiz');
+      $('#quizIntro').classList.add('hidden'); $('#resultBox').classList.remove('hidden');
+      setTimeout(()=>$('#sharePanel').scrollIntoView({behavior:'smooth'}), 300) }
+  };
+
+  $('#draw1').onclick  = () => summonFlow(1);
+  $('#draw10').onclick = () => summonFlow(10);
+  $('#openChest').onclick = openChest;
+  $('#exchangeBtn').onclick = () => { $('#exchangeBox').classList.toggle('hidden'); renderExchange() };
+  $('#simFriend').onclick = simFriend;
+  $('#smSkip').onclick  = closeCinematic;
+  $('#smClose').onclick = closeCinematic;
+  $('#smAgain').onclick = () => { closeCinematic(); setTimeout(()=>summonFlow(1), 200) };
+  $('#smDetail').onclick = () => { const k = $('#smName').textContent;
+    const r = ROLES.find(x => rn(x) === k); closeCinematic(); if (r){ go('dex'); setTimeout(()=>openSheet(r.key), 320) } };
+
+  $('#collideBtn').onclick = collide;
+  $('#shuffleBtn').onclick = () => shufflePair();
+  $('#fuseBtn').onclick = fuse;
+  $('#clearSquad').onclick = () => { S.squad = []; S.fused = null; $('#fusedPanel').classList.add('hidden'); save(); renderSquad() };
+
+  $('#checkinBtn').onclick = checkin;
+  $('#attackBtn').onclick = () => {
+    const open = MISSIONS.filter(m => !S.missions[m.k]);
+    if (!open.length){ toast(zh()?'所有任務都完成了，等下一波活動':'All missions done—wait for the next wave'); return }
+    toast(zh()?`還有 ${open.length} 個任務可以扣血`:`${open.length} missions left to deal damage`);
+    go('daily'); $('#missions').scrollIntoView({behavior:'smooth'});
+  };
+
+  $('#dlShare').onclick = downloadShare;
+  $('#sysShare').onclick = systemShare;
+  $('#copyLink').onclick = copyLink;
+
+  $('#meBtn').onclick = () => { renderState(); $('#meModal').classList.add('on') };
+  $$('[data-close-modal]').forEach(e => e.onclick = () => $('#meModal').classList.remove('on'));
+  $('#meModal').onclick = e => { if (e.target.id === 'meModal') $('#meModal').classList.remove('on') };
+  $('#lineBtn').onclick = lineLogin;
+  $('#otpBtn').onclick = requestOtp;
+  $('#verifyBtn').onclick = verifyOtp;
+  $('#syncBtn').onclick = syncCrm;
+  $('#resetBtn').onclick = () => {
+    if (!confirm(zh()?'確定要清除所有進度？':'Reset all progress?')) return;
+    store.del(KEY); S = JSON.parse(JSON.stringify(DEFAULT)); parseRef(); save();
+    location.reload();
+  };
+
+  $('#langBtn').onclick = () => { S.lang = zh() ? 'en' : 'zh'; save(); applyLang() };
+  $('#easyBtn').onclick = () => { S.easy = !S.easy; document.body.classList.toggle('easy', S.easy);
+    $('#easyBtn').classList.toggle('on', S.easy); save() };
+  $('#soundBtn').onclick = () => { S.sound = !S.sound; $('#soundBtn').textContent = S.sound?'🔊':'🔇';
+    $('#soundBtn').classList.toggle('on', S.sound); save(); if (S.sound) tone(660,.1,'sine',.04) };
+
+  addEventListener('keydown', e => {
+    if (e.key === 'Escape'){
+      if ($('#summon').classList.contains('on')) closeCinematic();
+      $('#sheet').classList.remove('on'); $('#meModal').classList.remove('on');
+    }
+  });
+}
+
+/* ═══════════ 啟動 ═══════════ */
+function renderAll(){
+  const heroPicks = ['deep','seamless','band'];
+  ['#heroA','#heroB','#heroC'].forEach((sel,i) => {
+    const r = ROLE(heroPicks[i]);
+    $(sel).innerHTML = cardHTML(r, {name: rn(r), sub: rty(r)});
+  });
+  if (S.roleKey) renderResult();
+  renderDex(); renderGacha(); renderSquad(); renderDaily(); renderThemes(); renderState();
+}
+let booted = false;
+function boot(){
+  if (booted) return; booted = true;
+  parseRef();
+  document.body.classList.toggle('easy', S.easy);
+  $('#easyBtn').classList.toggle('on', S.easy);
+  $('#soundBtn').textContent = S.sound ? '🔊' : '🔇';
+  $('#soundBtn').classList.toggle('on', S.sound);
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.body.classList.add('calm');
+  bind(); applyLang(); countdown(); shufflePair(); drawShare(); flushQueue();
+  if (S.roleKey){
+    $('#quizIntro').classList.add('hidden');
+    $('#resultBox').classList.remove('hidden');
+  }
+  save();
+}
+document.addEventListener('DOMContentLoaded', boot);
+if (document.readyState !== 'loading') boot();
+})();
+</script>
+</body>
+</html>
